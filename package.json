@@ -32,7 +32,7 @@
     "@graphql-tools/load": "^6.2.7",
     "@graphql-tools/load-files": "^6.2.7",
     "dotenv": "^8.2.0",
-    "drizzle-http": "^1.0.1",
+    "drizzle-http": "^2.0.0",
     "fastify": "^3.13.0",
     "graphql": "^15.5.0",
     "graphql-import": "^1.0.2",
