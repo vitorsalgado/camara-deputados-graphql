@@ -461,57 +461,59 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@drizzle-http/core@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@drizzle-http/core@npm:1.0.1"
+"@drizzle-http/core@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@drizzle-http/core@npm:2.0.0"
   dependencies:
     reflect-metadata: ^0.1.13
     tslib: ^2.1.0
-  checksum: 3f9b8a43cb5ef8a46d738c566c615561fa726569113284e0bc4f4bdff88b3cb6e63c8ae2fec99142680705ebd2d9f426f21d20b84749a8104cf3faa35de27d77
+  checksum: 1c3c736ec5b38919e73f2e77699b559cb8c43327e531abf8da9b467c33f885343ab0a570c37125aec0b7a536b5d1b13e16c1a5af5abcd42e80f4af89da58433e
   languageName: node
   linkType: hard
 
-"@drizzle-http/fetch@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@drizzle-http/fetch@npm:1.0.1"
+"@drizzle-http/fetch@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@drizzle-http/fetch@npm:2.0.0"
   dependencies:
-    "@drizzle-http/core": ^1.0.1
+    "@drizzle-http/core": ^2.0.0
+    abort-controller: ^3.0.0
+    node-fetch: ^2.6.1
     tslib: ^2.1.0
-  checksum: a2a93df37fe164a6822237d19d707212a0a1cfcd8afd275602aeaa0cb9f21a915be5bdbd3bea4b4321f152d6b17e12115ee9587ddd77c304188c525c3ada3815
+  checksum: 0dcea1a93de062e89eafe5dbd34c282c63df9ecd6b86f3a0a29ff39e1171a74c2f705a64fb545160eb80e606b37edd4f50ef769dad8b9b1843b286c7918035c8
   languageName: node
   linkType: hard
 
-"@drizzle-http/logging-interceptor@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@drizzle-http/logging-interceptor@npm:1.0.1"
+"@drizzle-http/logging-interceptor@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@drizzle-http/logging-interceptor@npm:2.0.0"
   dependencies:
-    "@drizzle-http/core": ^1.0.1
+    "@drizzle-http/core": ^2.0.0
     pino: ^6.11.1
-    pino-pretty: ^4.6.0
+    pino-pretty: ^4.7.0
     tslib: ^2.1.0
-  checksum: 05402302aaaaf6758d0424ac8d293fee18abe2529edebc4c31d1eee6da1f3bae197b61f6b2aee2f0f9ff3e412df227c1e0ae63117e306480f932a5149e813a9c
+  checksum: 952e6f399a8395531d5530e720e4ff59a631d68c29c5ef168d89f4c4032e6b5dd7d62492e721e8f5d5e86cb51359e8e4755c2ee61b43869d28337e6372638b87
   languageName: node
   linkType: hard
 
-"@drizzle-http/rxjs-adapter@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@drizzle-http/rxjs-adapter@npm:1.0.1"
+"@drizzle-http/rxjs-adapter@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@drizzle-http/rxjs-adapter@npm:2.0.0"
   dependencies:
-    "@drizzle-http/core": ^1.0.1
+    "@drizzle-http/core": ^2.0.0
     rxjs: ^6.6.6
     tslib: ^2.1.0
-  checksum: ae994b6fac9949457f6f8149a3bccdfa387cc755798049f9ab99ec00219cbe6ff7b45745cf4ba6dc3910b6e46fcf1891dd8c98e04a58035624cd73f48e2a68fc
+  checksum: 698f45fcb98cefa767635e85f289f61fc2efc192936a197321251040322d79e8898d731470ad6c53fcefeb05e273600ef364b8113a08afb7e9f9f0f54c2c93eb
   languageName: node
   linkType: hard
 
-"@drizzle-http/undici@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@drizzle-http/undici@npm:1.0.1"
+"@drizzle-http/undici@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@drizzle-http/undici@npm:2.0.0"
   dependencies:
-    "@drizzle-http/core": ^1.0.1
+    "@drizzle-http/core": ^2.0.0
     tslib: ^2.1.0
     undici: ^3.3.3
-  checksum: a0d73ca100f758a78e99c74087fe7c845f312c5ab464a32f0e8d5abb89c980dcc942ca4d10eb08e97f9ab0b9fe8e9532a0cc9fda962e8e780552056622cf3ccb
+  checksum: a5ff1d076da50a1ee54289bb18dd5998b1e82daab86cd366b5c5ac9761a374b75a3dc341b4e171ac050cd72dba221ab24570007be1ccbe7f7318f3725025e72e
   languageName: node
   linkType: hard
 
@@ -1222,10 +1224,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^14.14.31":
+"@types/node@npm:*":
   version: 14.14.31
   resolution: "@types/node@npm:14.14.31"
   checksum: 635dc8a0898a923621e02ca179e17baa39fdfa44f0096fcc1b7046c9b32317e74a99956a7b45ca0e8069874f51f4e7873a418239a318a4b6e7936f6510ac5992
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^14.14.32":
+  version: 14.14.32
+  resolution: "@types/node@npm:14.14.32"
+  checksum: ae73f3b668242da660b4f4f2047114fc047f5a6a92b8f9f4ab2f8ca1325c914c08cf13b6f90e6e88016fafb7a662d1963b075a6220d2208651a98a1cb3407221
   languageName: node
   linkType: hard
 
@@ -1402,6 +1411,15 @@ __metadata:
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
   checksum: 9f9236a3cc7f56c167be3aa81c77fcab2e08dfb8047b7861b91440f20b299b9442255856bdbe9d408d7e96a0b64a36e1c27384251126962490b4eee841b533e0
+  languageName: node
+  linkType: hard
+
+"abort-controller@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "abort-controller@npm:3.0.0"
+  dependencies:
+    event-target-shim: ^5.0.0
+  checksum: cc53ad8df9a6de3f55d4f804fca5106908f855e47b572fb5ab3cdd723b76374686dcefa557a2f87d4396db77e31bc0e6ce9d48637388cef6d884c29ad2691448
   languageName: node
   linkType: hard
 
@@ -2098,11 +2116,11 @@ __metadata:
     "@graphql-tools/load": ^6.2.7
     "@graphql-tools/load-files": ^6.2.7
     "@types/jest": ^26.0.20
-    "@types/node": ^14.14.31
+    "@types/node": ^14.14.32
     "@typescript-eslint/eslint-plugin": ^4.16.1
     "@typescript-eslint/parser": ^4.16.1
     dotenv: ^8.2.0
-    drizzle-http: ^1.0.1
+    drizzle-http: ^2.0.0
     eslint: ^7.21.0
     eslint-config-prettier: ^8.1.0
     eslint-config-standard: ^16.0.2
@@ -2119,6 +2137,8 @@ __metadata:
     lint-staged: ^10.5.4
     mercurius: ^7.2.0
     nodemon: ^2.0.7
+    pino: ^6.11.1
+    pino-pretty: ^4.7.0
     prettier: 2.2.1
     ts-jest: ^26.5.3
     ts-node: ^9.1.1
@@ -2852,16 +2872,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"drizzle-http@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "drizzle-http@npm:1.0.1"
+"drizzle-http@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "drizzle-http@npm:2.0.0"
   dependencies:
-    "@drizzle-http/core": ^1.0.1
-    "@drizzle-http/fetch": ^1.0.1
-    "@drizzle-http/logging-interceptor": ^1.0.1
-    "@drizzle-http/rxjs-adapter": ^1.0.1
-    "@drizzle-http/undici": ^1.0.1
-  checksum: fef461c491953d41a79e19f44631f654e54069a3fd93b787b3402730b0c80c1a7572e612ad31c306e16d0ebefecf3ef20af87eb06388943a79b7cbb83bbd5c0e
+    "@drizzle-http/core": ^2.0.0
+    "@drizzle-http/fetch": ^2.0.0
+    "@drizzle-http/logging-interceptor": ^2.0.0
+    "@drizzle-http/rxjs-adapter": ^2.0.0
+    "@drizzle-http/undici": ^2.0.0
+  checksum: c13794c14b7b3f704996d50def13d0b105802a8931eda9924175c8226c4948479273ed1ffcd5e899bc6edc2ddb4b0b3530bf314733b52a104b62942274014dba
   languageName: node
   linkType: hard
 
@@ -3325,6 +3345,13 @@ __metadata:
   version: 1.8.1
   resolution: "etag@npm:1.8.1"
   checksum: f18341a3c12a554ec46c0d4756bc9cae177e92f25a4ebd9ceefebf0ee448b675972fc110879f22b1bf514174713921ae5de9ff77af2062d422b1085588465a57
+  languageName: node
+  linkType: hard
+
+"event-target-shim@npm:^5.0.0":
+  version: 5.0.1
+  resolution: "event-target-shim@npm:5.0.1"
+  checksum: d176477a31adf328ff50148886e46cef3f61ff8bdc1d6db161f6b3ead2501085d5652a81fab8dddc59aed93727231c0b5c8a0948de77ae401b2d977a3d18329e
   languageName: node
   linkType: hard
 
@@ -6182,7 +6209,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.6.0":
+"node-fetch@npm:^2.6.0, node-fetch@npm:^2.6.1":
   version: 2.6.1
   resolution: "node-fetch@npm:2.6.1"
   checksum: cbb171635e538162b977eac5dfe7a1e07a9a02e991924377a6435502291e2f823d306b95aabc455caebf4a118ccf836868462bc70ccc3095af02bb9da61fda37
@@ -6735,9 +6762,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pino-pretty@npm:^4.6.0":
-  version: 4.6.0
-  resolution: "pino-pretty@npm:4.6.0"
+"pino-pretty@npm:^4.7.0":
+  version: 4.7.0
+  resolution: "pino-pretty@npm:4.7.0"
   dependencies:
     "@hapi/bourne": ^2.0.0
     args: ^5.0.1
@@ -6752,7 +6779,7 @@ __metadata:
     strip-json-comments: ^3.1.1
   bin:
     pino-pretty: bin.js
-  checksum: 5999bfebe2dedf207785e5f60598063be7995f5463fb46b61a1910f756027ac1903cfbda8c0c0dcdca749db7348234829a6b773432c6b0746af4de4382ccb1db
+  checksum: 6ec98566e1a2b878f83756b741263c9aff76c091aad169a944e2a9fcef023e2c13f7bbe15aaa8172ef6d66ae3b4bfc621eedbefc9473778b8ecc7e7d85900c80
   languageName: node
   linkType: hard
 
