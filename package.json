@@ -38,7 +38,7 @@
     "graphql-import": "^1.0.2",
     "joi": "^17.4.0",
     "mercurius": "^7.2.0",
-    "pino": "^6.11.1",
+    "pino": "^6.11.2",
     "pino-pretty": "^4.7.0",
     "tslib": "^2.1.0",
     "undici": "^3.3.3"
