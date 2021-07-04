@@ -1,0 +1,30 @@
+# Build Stage
+# ---
+FROM node:14 AS builder
+
+ARG NODE_ENV=production
+ENV NODE_ENV $NODE_ENV
+
+WORKDIR /opt/app
+
+COPY package.json yarn.lock .yarnrc.yml ./
+COPY .yarn ./.yarn
+RUN yarn
+COPY . .
+RUN yarn build
+
+# Run Stage
+# ---
+FROM gcr.io/distroless/nodejs:14
+
+USER nobody
+
+COPY --chown=nobody --from=builder /opt/app /opt/app
+WORKDIR /opt/app
+
+ARG NODE_ENV=production
+ENV NODE_ENV $NODE_ENV
+ENV DIST_MODE 1
+ENV PATH /opt/node_app/node_modules/.bin:$PATH
+
+CMD ["dist/cmd/srv/index.js"]
