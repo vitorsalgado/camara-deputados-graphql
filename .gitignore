@@ -111,8 +111,7 @@ dist
 !**/.yarn/versions
 **/.pnp.*
 
-.nvmrc
-
 # Project
 .idea/
 .vscode/
+tools/dev/

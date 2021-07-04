@@ -7,12 +7,17 @@ module.exports = {
     node: true
   },
   rules: {
-    'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': ['error'],
+    'tsdoc/syntax': 'error',
 
+    'no-unused-vars': 'off',
+    'space-before-function-paren': 'off',
+    'no-console': 'error',
+
+    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     'no-dupe-class-members': 'off',
     '@typescript-eslint/no-dupe-class-members': ['error'],
-
-    'space-before-function-paren': 'off'
+    'no-useless-constructor': 'off',
+    '@typescript-eslint/no-useless-constructor': ['error'],
+    '@typescript-eslint/no-inferrable-types': ['off']
   }
 }

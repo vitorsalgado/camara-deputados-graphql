@@ -1,9 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "outDir": "dist",
-
-    "target": "ESNext",
+    "target": "ES2018",
     "module": "CommonJS",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
@@ -26,15 +23,22 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "composite": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+
+    "outDir": "dist",
+    "rootDir": "src",
+    "baseUrl": ".",
+    "paths": {
+      "@app/*": ["./src/*"]
+    },
+    "typeRoots": [
+      "node_modules/@types",
+      "ts-declarations.d.ts"
+    ]
   },
   "exclude": [
     "dist",
     "node_modules"
   ],
-  "include": [
-    "./graphql/**/*.graphql",
-    "./src/**/*.tsx",
-    "./src/**/*.ts"
-  ]
+  "include": ["./src/**/*"]
 }

@@ -27,6 +27,9 @@ module.exports = {
     '!scripts/*'
   ],
   coveragePathIgnorePatterns: ['/dist/', '/node_modules/'],
-  modulePathIgnorePatterns: ['dist', 'examples/*', 'scripts/*'],
-  testPathIgnorePatterns: ['/node_modules/', '/dist/', '/scripts/']
+  modulePathIgnorePatterns: ['dist', 'tools/*', 'examples/*', 'scripts/*'],
+  testPathIgnorePatterns: ['/node_modules/', '/dist/', '/scripts/'],
+  moduleNameMapper: {
+    '^@app/(.*)$': '<rootDir>/src/$1'
+  }
 }
