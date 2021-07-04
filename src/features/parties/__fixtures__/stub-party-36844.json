@@ -1,0 +1,35 @@
+{
+  "dados": {
+    "id": 36844,
+    "sigla": "PT",
+    "nome": "Partido dos Trabalhadores",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "status": {
+      "data": "2021-06-02T18:32",
+      "idLegislatura": "56",
+      "situacao": "Ativo",
+      "totalPosse": "55",
+      "totalMembros": "53",
+      "uriMembros": "https://dadosabertos.camara.leg.br/api/v2/deputados?idLegislatura=56&siglaPartido=PT",
+      "lider": {
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/73433",
+        "nome": "Arlindo Chinaglia",
+        "siglaPartido": "PT",
+        "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+        "uf": "SP",
+        "idLegislatura": 56,
+        "urlFoto": "http://www.camara.gov.br/internet/deputado/bandep/73433.jpg"
+      }
+    },
+    "numeroEleitoral": null,
+    "urlLogo": "http://www.camara.leg.br/internet/Deputado/img/partidos/PT.gif",
+    "urlWebSite": null,
+    "urlFacebook": null
+  },
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844"
+    }
+  ]
+}

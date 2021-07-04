@@ -1,0 +1,28 @@
+{
+  "dados": [
+    {
+      "id": 36844,
+      "sigla": "PT",
+      "nome": "Partido dos Trabalhadores",
+      "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://dadosabertos.camara.leg.br/api/v2/partidos?sigla=PT&pagina=1&itens=1&ordem=DESC&ordenarPor=nome"
+    },
+    {
+      "rel": "next",
+      "href": "https://dadosabertos.camara.leg.br/api/v2/partidos?sigla=PT&ordem=DESC&ordenarPor=nome&pagina=2&itens=1"
+    },
+    {
+      "rel": "first",
+      "href": "https://dadosabertos.camara.leg.br/api/v2/partidos?sigla=PT&ordem=DESC&ordenarPor=nome&pagina=1&itens=1"
+    },
+    {
+      "rel": "last",
+      "href": "https://dadosabertos.camara.leg.br/api/v2/partidos?sigla=PT&ordem=DESC&ordenarPor=nome&pagina=1&itens=1"
+    }
+  ]
+}
