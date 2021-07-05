@@ -8,6 +8,7 @@
   "scripts": {
     "start": "DIST_MODE=1 node dist/cmd/srv/index.js",
     "start:dev": "nodemon --ext js,ts,json,graphql,env src/cmd/srv/index.ts",
+    "cli": "node src/cmd/cli/index.js",
     "test": "jest --detectOpenHandles --logHeapUsage",
     "test:ci": "yarn test --colors --coverage --ci",
     "test:coverage:upload": "codecov -f coverage/*.json",
@@ -56,6 +57,7 @@
     "@typescript-eslint/eslint-plugin": "^4.28.1",
     "@typescript-eslint/parser": "^4.28.1",
     "codecov": "^3.8.2",
+    "commander": "^8.0.0",
     "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.3",
