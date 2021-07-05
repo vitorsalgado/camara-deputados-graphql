@@ -3,7 +3,7 @@ version: '3'
 services:
   app:
     build:
-      context: ../build
+      context: ../
     container_name: app
     init: true
     restart: on-failure
