@@ -69,7 +69,7 @@ jobs:
           heroku container:login
 
           docker build -t $DOCKER_IMAGE -f build/Dockerfile .
-          docker tag $DOCKER_IMAGE registry.heroku.com/$HEROKU_APPLICATION/web
-          docker push registry.heroku.com/$HEROKU_APPLICATION/web
+          docker tag $DOCKER_IMAGE registry.heroku.com/$HEROKU_APP/web
+          docker push registry.heroku.com/$HEROKU_APP/web
 
-          heroku ps:scale web=1 -a $HEROKU_APPLICATION
+          heroku ps:scale web=1 -a $HEROKU_APP
