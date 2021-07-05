@@ -11,8 +11,6 @@ on:
       - 'docs/**'
       - '*.md'
   pull_request:
-    branches:
-      - '**'
     paths-ignore:
       - 'docs/**'
       - '*.md'
@@ -48,3 +46,15 @@ jobs:
       - name: Deps
         run: |
           yarn --immutable
+
+      - name: Lint
+        run: |
+          yarn lint
+          yarn prettier:ci
+
+      - name: Test
+        run: |
+          yarn test:ci
+          yarn test:coverage:upload
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

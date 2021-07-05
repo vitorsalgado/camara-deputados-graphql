@@ -9,6 +9,8 @@
     "start": "DIST_MODE=1 node dist/cmd/srv/index.js",
     "start:dev": "nodemon --ext js,ts,json,graphql,env src/cmd/srv/index.ts",
     "test": "jest --detectOpenHandles --logHeapUsage",
+    "test:ci": "yarn test --colors --coverage --ci",
+    "test:coverage:upload": "codecov -f coverage/*.json",
     "build": "tsc --project tsconfig.build.json && node scripts/copy-schemas",
     "postinstall": "husky install",
     "lint": "eslint --ext .ts .",
