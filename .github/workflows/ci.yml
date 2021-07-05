@@ -66,4 +66,4 @@ jobs:
         run: |
           heroku container:login
           heroku stack:set container
-          git push heroku master
+          git push heroku main
