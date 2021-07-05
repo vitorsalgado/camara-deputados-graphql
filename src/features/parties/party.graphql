@@ -34,5 +34,14 @@ enum PartiesOrderBy {
 extend type Query {
   party(id: ID!): Party
   partyByAcronym(acronym: String!): Party
-  parties(acronym: String, startDate: String, endDate: String, termId: Int, page: Int, limit: Int, order: Order, orderBy: PartiesOrderBy): PartySimpleConnection
+  parties(
+    acronym: String
+    startDate: String
+    endDate: String
+    termId: Int
+    page: Int
+    limit: Int
+    order: Order
+    orderBy: PartiesOrderBy
+  ): PartySimpleConnection
 }
