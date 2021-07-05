@@ -66,7 +66,7 @@ jobs:
         run: |
           DOCKER_IMAGE=chamber-deputies-graphql
 
-          docker login --email=_ --username=_ --password=$HEROKU_API_KEY registry.heroku.com
+          heroku container:login
 
           docker build -t $DOCKER_IMAGE -f build/Dockerfile .
           docker tag $DOCKER_IMAGE registry.heroku.com/$HEROKU_APPLICATION/web
