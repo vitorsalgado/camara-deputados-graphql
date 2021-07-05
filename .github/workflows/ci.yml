@@ -59,6 +59,15 @@ jobs:
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
+  deploy:
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
       - name: Deploy To Heroku
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
