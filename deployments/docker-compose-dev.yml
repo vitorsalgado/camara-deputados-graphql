@@ -1,10 +1,13 @@
 version: '3'
 
 services:
-  app:
+  app-dev:
     build:
       context: ../build
-    container_name: app
+      dockerfile: Dockerfile.dev
+    container_name: app-dev
+    volumes:
+      - ../:/opt/app
     init: true
     restart: on-failure
     ports:

@@ -17,7 +17,7 @@ export class AppServer {
   }
 
   build(opts?: FastifyServerOptions): FastifyInstance {
-    this.fastifyApp = Fastify<Server>({ logger: false, ...opts })
+    this.fastifyApp = Fastify<Server>({ logger: this.configurations.server.loggerEnabled, ...opts })
     this.fastifyApp.register(GracefulShutdownPlugin)
 
     const features = graphqlFeatures(this.configurations)

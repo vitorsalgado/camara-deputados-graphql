@@ -1,0 +1,10 @@
+FROM node:14
+
+ARG NODE_ENV=production
+ENV NODE_ENV $NODE_ENV
+
+WORKDIR /opt/app
+RUN chown -R 1000:1000 /opt/app
+VOLUME /opt/app
+
+CMD yarn start:dev
