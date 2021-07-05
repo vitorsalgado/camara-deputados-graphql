@@ -66,4 +66,5 @@ jobs:
         run: |
           heroku container:login
           heroku stack:set container
+          heroku git:remote -a $HEROKU_APP
           git push heroku main
