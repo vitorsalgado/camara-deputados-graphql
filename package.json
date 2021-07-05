@@ -38,7 +38,7 @@
   "dependencies": {
     "dotenv": "^10.0.0",
     "drizzle-http": "^2.2.0",
-    "fastify": "^3.18.0",
+    "fastify": "^3.18.1",
     "ioredis": "^4.27.6",
     "joi": "^17.4.0",
     "mercurius": "^7.9.1",
