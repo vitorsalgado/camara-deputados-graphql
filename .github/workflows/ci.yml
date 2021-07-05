@@ -58,3 +58,18 @@ jobs:
           yarn test:coverage:upload
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Deploy To Heroku
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          HEROKU_APP: ${{ secrets.HEROKU_APP }}
+        run: |
+          DOCKER_IMAGE=chamber-deputies-graphql
+
+          docker login --email=_ --username=_ --password=$HEROKU_API_KEY registry.heroku.com
+
+          docker build -t $DOCKER_IMAGE -f build/Dockerfile .
+          docker tag $DOCKER_IMAGE registry.heroku.com/$HEROKU_APPLICATION/web
+          docker push registry.heroku.com/$HEROKU_APPLICATION/web
+
+          heroku ps:scale web=1 -a $HEROKU_APPLICATION
