@@ -15,21 +15,19 @@ module.exports = {
   reporters: ['default'],
   watchPathIgnorePatterns: ['coverage'],
   projects: ['<rootDir>'],
-  collectCoverageFrom: [
-    '**/src/*/**/*.ts',
-    '**/src/*/**/*.tsx',
-    '!**/bin/**',
-    '!**/__mocks__/**',
-    '!**/__tests__/**',
-    '!**/build/**',
-    '!**/vendor/**',
-    '!**/dist/**',
-    '!scripts/*'
-  ],
+  collectCoverageFrom: ['**/src/*/**/*.ts', '!**/__mocks__/**', '!**/__tests__/**', '!**/dist/**', '!scripts/*'],
   coveragePathIgnorePatterns: ['/dist/', '/node_modules/'],
-  modulePathIgnorePatterns: ['dist', 'tools/*', 'examples/*', 'scripts/*'],
+  modulePathIgnorePatterns: ['dist', 'scripts/*'],
   testPathIgnorePatterns: ['/node_modules/', '/dist/', '/scripts/'],
   moduleNameMapper: {
     '^@app/(.*)$': '<rootDir>/src/$1'
+  },
+  coverageThreshold: {
+    global: {
+      branches: 60,
+      functions: 60,
+      lines: 60,
+      statements: 60
+    }
   }
 }
