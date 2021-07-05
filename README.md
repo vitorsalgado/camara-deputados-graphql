@@ -5,6 +5,7 @@
 [![ci](https://github.com/vitorsalgado/camara-deputados-graphql/actions/workflows/ci.yml/badge.svg)](https://github.com/vitorsalgado/camara-deputados-graphql/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/vitorsalgado/camara-deputados-graphql/branch/main/graph/badge.svg?token=24HGDVTL7W)](https://codecov.io/gh/vitorsalgado/camara-deputados-graphql)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+![GitHub top language](https://img.shields.io/github/languages/top/vitorsalgado/camara-deputados-graphql)
 
 ## Other Languages
 
@@ -18,7 +19,9 @@ with TypeScript.
 It is still a **Work in Progress**.
 
 ## Demo
-Demo application available on: 
+
+A **demo** application is available
+on: [https://graphql-chamber-deputies-br.herokuapp.com/playground](https://graphql-chamber-deputies-br.herokuapp.com/playground)
 
 ## Chamber of Deputies API
 
@@ -97,7 +100,7 @@ To execute an environment with a **Redis** instance and minimalist application c
 make up
 ```
 
-## Tests
+## Tests &middot; [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 
 Tests are base on **Jest** and for the features, **SuperTest** and **Nock** are used for integration tests, simulating
 API integrations.  
@@ -113,7 +116,6 @@ The project structure groups business code by **domain** instead of the traditio
 repositories, models* and is part based on [Go Project Layout](https://github.com/golang-standards/project-layout),
 which is actually a Go pattern but, the idea is interesting. The source structure explanation below:
 
-- build - Packaging related files like Docker
 - deployments - Deployments files for any environment
 - docs - Project documentations
 - scripts - Support scripts for the project
