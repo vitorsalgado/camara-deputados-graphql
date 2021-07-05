@@ -17,9 +17,12 @@ This project is intended to serve as a learning experience for GraphQL and also 
 with TypeScript.  
 It is still a **Work in Progress**.
 
+## Demo
+Demo application available on: 
+
 ## Chamber of Deputies API
 
-This is the (Swagger)[https://dadosabertos.camara.leg.br/swagger/api.html] documentation for the API which this
+This is the [Swagger](https://dadosabertos.camara.leg.br/swagger/api.html) documentation for the API which this
 application uses to get all data.
 
 ## Tech

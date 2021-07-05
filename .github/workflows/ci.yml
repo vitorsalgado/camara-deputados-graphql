@@ -64,7 +64,12 @@ jobs:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           HEROKU_APP: ${{ secrets.HEROKU_APP }}
         run: |
+          DOCKER_IMAGE=chamber-deputies-graphql
+
           heroku container:login
-          heroku stack:set container
-          heroku git:remote -a $HEROKU_APP
-          git push heroku main
+
+          docker build -t $DOCKER_IMAGE -f build/Dockerfile .
+          docker tag $DOCKER_IMAGE registry.heroku.com/$HEROKU_APP/web
+          docker push registry.heroku.com/$HEROKU_APP/web
+
+          heroku ps:scale web=1 -a $HEROKU_APP
