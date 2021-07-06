@@ -1,9 +1,10 @@
 <a href="https://github.com/vitorsalgado/camara-deputados-graphql" target="_blank"><img src="docs/assets/logo.png" alt="Câmera dos Deputados GraphQL Logo" width="85px" align="right" /></a>
 
-# GraphQL - Brazilian Chamber of Deputies API
+# GraphQL API &middot; Chamber of Deputies of Brazil
 
 [![ci](https://github.com/vitorsalgado/camara-deputados-graphql/actions/workflows/ci.yml/badge.svg)](https://github.com/vitorsalgado/camara-deputados-graphql/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/vitorsalgado/camara-deputados-graphql/branch/main/graph/badge.svg?token=24HGDVTL7W)](https://codecov.io/gh/vitorsalgado/camara-deputados-graphql)
+[![Maintainability](https://api.codeclimate.com/v1/badges/0755f928bd5117d669a9/maintainability)](https://codeclimate.com/github/vitorsalgado/camara-deputados-graphql/maintainability)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 ![GitHub top language](https://img.shields.io/github/languages/top/vitorsalgado/camara-deputados-graphql)
 
