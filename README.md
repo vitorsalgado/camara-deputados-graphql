@@ -1,6 +1,6 @@
 <a href="https://github.com/vitorsalgado/camara-deputados-graphql" target="_blank"><img src="docs/assets/logo.png" alt="Câmera dos Deputados GraphQL Logo" width="85px" align="right" /></a>
 
-# GraphQL - Brazil Chamber of Deputies API
+# GraphQL - Brazilian Chamber of Deputies API
 
 [![ci](https://github.com/vitorsalgado/camara-deputados-graphql/actions/workflows/ci.yml/badge.svg)](https://github.com/vitorsalgado/camara-deputados-graphql/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/vitorsalgado/camara-deputados-graphql/branch/main/graph/badge.svg?token=24HGDVTL7W)](https://codecov.io/gh/vitorsalgado/camara-deputados-graphql)
@@ -23,7 +23,7 @@ It is still a **Work in Progress**.
 A **demo** application is available
 on: [https://graphql-chamber-deputies-br.herokuapp.com/playground](https://graphql-chamber-deputies-br.herokuapp.com/playground)
 
-## Chamber of Deputies API
+## Open Data - Chamber of Deputies API
 
 This is the [Swagger](https://dadosabertos.camara.leg.br/swagger/api.html) documentation for the API which this
 application uses to get all data.
