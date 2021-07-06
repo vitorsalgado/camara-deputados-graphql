@@ -1,0 +1,24 @@
+version: "2"
+
+checks:
+  similar-code:
+    enabled: false
+
+exclude_patterns:
+  - "**/*.spec.ts"
+  - "**/*.spec.js"
+  - "**/*.d.ts"
+  - "**/node_modules/"
+  - "**/__fixtures__/"
+  - "scripts/"
+  - "dist/"
+  - "docs/"
+  - "tools/"
+  - "deployments/"
+
+plugins:
+  eslint:
+    enabled: true
+    config:
+      extensions:
+        - .ts

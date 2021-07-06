@@ -7,35 +7,14 @@ export class EnvConfigurationsFactory implements ConfigurationsFactory {
     const env = parseConfigurations(process.env)
 
     return {
-      runtime: {
-        isTest: env.NODE_ENV === 'test'
-      },
-
-      log: {
-        level: env.LOG_LEVEL,
-        pretty: env.LOG_PRETTY
-      },
-
-      server: {
-        port: env.PORT,
-        host: env.SERVER_HOST,
-        loggerEnabled: env.SERVER_LOG_ENABLED
-      },
-
+      runtime: { isTest: env.NODE_ENV === 'test' },
+      log: { level: env.LOG_LEVEL, pretty: env.LOG_PRETTY },
+      server: { port: env.PORT, host: env.SERVER_HOST, loggerEnabled: env.SERVER_LOG_ENABLED },
       api: {
-        congress: {
-          url: env.CONGRESS_API_URL,
-          loggerEnabled: env.CONGRESS_API_LOG_ENABLED
-        }
+        congress: { url: env.CONGRESS_API_URL, loggerEnabled: env.CONGRESS_API_LOG_ENABLED }
       },
-
-      gql: {
-        playground: env.GQL_PLAYGROUND
-      },
-
-      redis: {
-        connectionString: env.REDIS_CONNECTION_STRING
-      }
+      gql: { playground: env.GQL_PLAYGROUND },
+      redis: { connectionString: env.REDIS_CONNECTION_STRING }
     }
   }
 }
