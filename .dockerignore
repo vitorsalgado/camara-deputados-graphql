@@ -5,6 +5,10 @@ docs/
 node_modules/
 tools/
 
+.yarn/
+!.yarn/plugins/
+!.yarn/releases/
+
 .editorconfig
 .env
 .eslintignore

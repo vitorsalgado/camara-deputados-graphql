@@ -9,9 +9,11 @@ WORKDIR /opt/app
 
 COPY package.json yarn.lock .yarnrc.yml ./
 COPY .yarn ./.yarn
-RUN yarn
+RUN yarn --immutable
 COPY . .
-RUN yarn build
+RUN yarn build && \
+    rm -rf node_modules && \
+    SKIP_POSTINSTALL=1 yarn workspaces focus --production
 
 # Run Stage
 # ---

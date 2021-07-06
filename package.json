@@ -13,7 +13,7 @@
     "test:ci": "yarn test --colors --coverage --ci",
     "test:coverage:upload": "codecov -f coverage/*.json",
     "build": "tsc --project tsconfig.build.json && node scripts/copy-schemas",
-    "postinstall": "husky install",
+    "postinstall": "husky install || true",
     "lint": "eslint --ext .ts .",
     "prettier": "prettier 'src/**' --write --ignore-unknown",
     "prettier:ci": "prettier --check 'src/**' --ignore-unknown"
