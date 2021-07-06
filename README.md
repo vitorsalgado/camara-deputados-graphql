@@ -17,7 +17,7 @@
 Application that exposes Brazilian Chamber of Deputies REST API through a **GraphQL**.  
 This project is intended to serve as a learning experience for GraphQL and also to explore NodeJS architecture models
 with TypeScript.  
-It is still a **Work in Progress**.
+This is a **Work in Progress**.
 
 ## Demo
 
@@ -44,21 +44,21 @@ application uses to get all data.
 ## Dev
 
 This project uses a mix of tools to enforce code-style and quality.  
-**ESLint** is used for lint, **Husky**, **Pretties** and **Lint Staged** when configured, ensures that no files are
+**ESLint** is used for lint, **Husky**, **Pretties** and **Lint Staged** when configured, ensures that no files will be
 committed without following project standards.
 
 ## Configurations
 
 The application **Environment Variables** for configurations and the lib **DotEnv** allows you to change values on local
 environment. Create a file **.env** on project root and place there the env vars you want to change.  
-Check this **[Joi schema](src/config/env/env.schema.ts)**, all application environment variables are here.
+Check this **[Joi schema](src/config/env/env.schema.ts)**, all application environment variables are there.
 
 ## Running
 
 ### Installing Dependencies
 
-This project uses **Yarn 2** for dependencies management.  
-Run:
+**Yarn 2** is the chosen package manager for this project.  
+To install dependencies, run:
 
 ```
 yarn
@@ -66,7 +66,7 @@ yarn
 
 ### Local Development
 
-On development environments, use the command below to start the application with **Nodemon**:
+To start a local development environment with **Nodemon**, run:
 
 ```
 yarn start:dev
@@ -74,14 +74,14 @@ yarn start:dev
 
 ### Local Development with Docker Compose
 
-To execute a environment with Docker Compose, execute:
+To start a local development environment with Docker Compose, run:
 
 ```
 make dev
 ```
 
-This **Docker Compose** contains a container that executes the application with **Nodemon** and a container for **
-Redis**.
+This **Docker Compose** contains a container that executes the application with **Nodemon**
+and a container for **Redis**.
 
 ### Build and Run
 
@@ -94,7 +94,7 @@ yarn start
 
 ### Docker
 
-This [Dockerfile](build/Dockerfile) generates a minimalist docker image for the application.  
+This [Dockerfile](Dockerfile) generates a minimalist docker image for the application.  
 To execute an environment with a **Redis** instance and minimalist application container, execute:
 
 ```
@@ -103,8 +103,8 @@ make up
 
 ## Tests &middot; [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 
-Tests are base on **Jest** and for the features, **SuperTest** and **Nock** are used for integration tests, simulating
-API integrations.  
+The test framework of this project is **Jest**.  
+**SuperTest** and **Nock** are used for integration tests, simulating API integrations.  
 To execute the tests, run:
 
 ```
@@ -113,9 +113,11 @@ yarn test
 
 ## Project Structure
 
-The project structure groups business code by **domain** instead of the traditional *controllers, services,
-repositories, models* and is part based on [Go Project Layout](https://github.com/golang-standards/project-layout),
-which is actually a Go pattern but, the idea is interesting. The source structure explanation below:
+The project structure groups business code by **domain** instead of the traditional
+*controllers, services, repositories, models*.   
+The folder organization is part based on [Go Project Layout](https://github.com/golang-standards/project-layout).  
+Even though it is a layout for Go projects, the idea is interesting and suites here too.  
+The project layout:
 
 - deployments - Deployments files for any environment
 - docs - Project documentations
