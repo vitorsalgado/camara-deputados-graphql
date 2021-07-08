@@ -134,6 +134,6 @@ The project layout:
   - utils - Support code for application. Utilities specific for a domain needs to go on the respective domain folder
     inside *features*
 
-## License
+## License &middot; [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvitorsalgado%2Fcamara-deputados-graphql.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvitorsalgado%2Fcamara-deputados-graphql?ref=badge_shield)
 
 This project is [Apache Licensed](LICENSE).
