@@ -15,9 +15,6 @@ on:
       - 'docs/**'
       - '*.md'
 
-env:
-  CI: true
-
 jobs:
   build:
     runs-on: ubuntu-latest
