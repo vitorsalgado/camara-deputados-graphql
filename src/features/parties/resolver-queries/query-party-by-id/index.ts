@@ -1,19 +1,15 @@
 import { PartyRepository } from '@app/features/parties'
 import { Party } from '@app/data/api'
-import { MercuriusContext } from 'mercurius'
+import { Context, Query } from '@app/features/core'
+import { GraphQLResolveInfo } from 'graphql'
 
 export interface FindByIdArgs {
   id: number
 }
 
-interface Q {
-  party(_: MercuriusContext, args: FindByIdArgs): Promise<Party>
-}
+export class QueryPartyById implements Query<unknown, FindByIdArgs, Party> {
+  constructor(private readonly partyRepository: PartyRepository) {}
 
-export function QueryPartyById(partyRepository: PartyRepository): Q {
-  return {
-    party(_: MercuriusContext, args: FindByIdArgs): Promise<Party> {
-      return partyRepository.getById(args.id)
-    }
-  }
+  execute = (parent: unknown, args: FindByIdArgs, _ctx: Context, _info: GraphQLResolveInfo): Promise<Party> =>
+    this.partyRepository.getById(args.id)
 }

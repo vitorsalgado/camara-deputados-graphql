@@ -23,8 +23,10 @@ export interface LoaderArgs<T> {
 }
 
 export interface PagedCriteria {
-  page: number
-  limit: number
+  after: number
+  first: number
+  before: number
+  last: number
   order: Order
   orderBy: string
 }

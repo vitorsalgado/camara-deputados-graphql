@@ -4,7 +4,7 @@ import { AppServer } from '@app/srv/server'
 import { provideConfig } from '@app/config'
 import { contains, nockIsDone, stub, stubPath } from '@app/utils/testing/http/test-http-utils'
 import {
-  PartyStubs,
+  PartyFixtures,
   queryPartyByAcronym,
   queryPartyById,
   queryPartyWithLeader,
@@ -16,9 +16,9 @@ import TestConsts from '@app/utils/testing/http/test-constants'
 import { allOf } from '@app/utils/func/allOf'
 import { modifyConfigForTest } from '@app/utils/testing/config'
 
-const StubParty = stubPath(__dirname, PartyStubs.Party)
-const StubWithOneParty = stubPath(__dirname, PartyStubs.OneParty)
-const StubDeputies = stubPath(__dirname, PartyStubs.Deputies)
+const StubParty = stubPath(__dirname, PartyFixtures.Party)
+const StubWithOneParty = stubPath(__dirname, PartyFixtures.OneParty)
+const StubDeputies = stubPath(__dirname, PartyFixtures.Deputies)
 
 describe('Party', function () {
   const application = new AppServer(modifyConfigForTest(provideConfig()))

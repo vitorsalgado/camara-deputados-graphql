@@ -2,13 +2,13 @@ import { provideCongressApi } from '@app/data/api'
 import { Configurations } from '@app/config'
 import { PartyApiRepository } from '@app/features/parties/party.repository-api'
 import DeputyFeatures, { DeputyApiRepository } from '@app/features/deputies'
-import { CacheInmemoryService } from '@app/utils/cache'
-import PartyFeatures from './parties'
+import PartyFeatures from '@app/features/parties'
+import { Scalars } from '@app/utils/graphql/scalars'
 
 export function graphqlFeatures(configurations: Configurations): any {
   // Deps
   const congressApi = provideCongressApi(configurations)
-  const partyRepository = new PartyApiRepository(congressApi, new CacheInmemoryService())
+  const partyRepository = new PartyApiRepository(congressApi)
   const deputyRepository = new DeputyApiRepository(congressApi)
 
   // Features
@@ -21,8 +21,11 @@ export function graphqlFeatures(configurations: Configurations): any {
         ...deputy.Queries,
         ...party.Queries
       },
+
       ...deputy.Types,
-      ...party.Types
+      ...party.Types,
+
+      ...Scalars
     },
     Loaders: {
       ...deputy.Loaders,

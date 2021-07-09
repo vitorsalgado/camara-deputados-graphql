@@ -39,8 +39,10 @@ extend type Query {
     startDate: String
     endDate: String
     termId: Int
-    page: Int
-    limit: Int
+    after: Cursor
+    first: Int
+    before: Cursor
+    last: Int
     order: Order
     orderBy: PartiesOrderBy
   ): PartySimpleConnection
