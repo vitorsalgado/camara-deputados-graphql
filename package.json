@@ -50,6 +50,7 @@
     "ioredis": "^4.27.6",
     "joi": "^17.4.0",
     "mercurius": "^8.0.0",
+    "newrelic": "^7.5.2",
     "pino": "^6.11.3",
     "pino-pretty": "^5.1.1",
     "tsconfig-paths": "^3.10.1",

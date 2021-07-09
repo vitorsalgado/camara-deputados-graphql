@@ -5,7 +5,9 @@
 // Fix Typescript "paths" mappings
 // This import must always be the first one and the import path needs to be relative
 import '../../utils/ts/fix-paths-mapping'
+
 import 'dotenv/config'
+import 'newrelic'
 
 import { EnvConfigurationsFactory, provideConfig } from '@app/config'
 import Logger from '@app/utils/log'

@@ -24,7 +24,12 @@ const ConfigurationsSchema = Joi.object({
   CACHE_STRATEGY: Joi.string().allow('in-memory', 'redis').default('in-memory'),
 
   // Redis
-  REDIS_CONNECTION_STRING: Joi.string().default('redis://0.0.0.0:6379')
+  REDIS_CONNECTION_STRING: Joi.string().default('redis://0.0.0.0:6379'),
+
+  // APM
+  NEW_RELIC_NO_CONFIG_FILE: Joi.boolean().default(true),
+  NEW_RELIC_LICENSE_KEY: Joi.string(),
+  NEW_RELIC_APP_NAME: Joi.string()
 }).unknown()
 
 export const parseConfigurations = (source: unknown): any => Joi.attempt(source, ConfigurationsSchema)

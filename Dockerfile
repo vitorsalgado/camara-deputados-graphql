@@ -26,6 +26,7 @@ WORKDIR /opt/app
 
 ARG NODE_ENV=production
 ENV NODE_ENV $NODE_ENV
+ENV NEW_RELIC_NO_CONFIG_FILE true
 ENV DIST_MODE 1
 ENV PATH /opt/node_app/node_modules/.bin:$PATH
 
