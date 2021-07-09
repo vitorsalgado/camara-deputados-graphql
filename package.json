@@ -1,20 +1,20 @@
 {
-  "name": "camara-federal-graphql",
+  "name": "graphql-brazil-chamber-of-deputies-api",
   "version": "1.0.0",
-  "description": "GraphQL for the Brazilian Chamber of Deputies REST API",
+  "description": "Proxy GraphQL for Brazil's Chamber of Deputies REST API",
   "private": true,
   "main": "./dist/cmd/srv/index.js",
   "types": "./dist/cmd/srv/index.d.ts",
   "scripts": {
     "start": "DIST_MODE=1 node dist/cmd/srv/index.js",
     "start:dev": "nodemon --ext js,ts,json,graphql,env src/cmd/srv/index.ts",
-    "cli": "node src/cmd/cli/index.js",
+    "cli": "ts-node src/cmd/cli/index.ts",
     "test": "jest --detectOpenHandles --logHeapUsage",
     "test:ci": "yarn test --colors --coverage --ci",
     "test:coverage:upload": "codecov -f coverage/*.json",
     "build": "tsc --project tsconfig.build.json && node scripts/copy-schemas",
     "postinstall": "husky install || true",
-    "lint": "eslint --ext .ts .",
+    "lint": "eslint --ext .ts,.js .",
     "prettier": "prettier 'src/**' --write --ignore-unknown",
     "prettier:ci": "prettier --check 'src/**' --ignore-unknown"
   },
@@ -35,7 +35,14 @@
   "bugs": {
     "url": "https://github.com/vitorsalgado/camara-deputados-graphql/issues"
   },
-  "homepage": "https://github.com/vitorsalgado/camara-deputados-graphql#readme",
+  "readme": "https://github.com/vitorsalgado/camara-deputados-graphql#readme",
+  "homepage": "https://graphql-chamber-deputies-br.herokuapp.com/graphiql",
+  "keywords": [
+    "graphql",
+    "graphql-api",
+    "api",
+    "typescript"
+  ],
   "dependencies": {
     "dotenv": "^10.0.0",
     "drizzle-http": "^2.2.0",
@@ -46,7 +53,8 @@
     "pino": "^6.11.3",
     "pino-pretty": "^5.1.0",
     "tsconfig-paths": "^3.10.1",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@types/ioredis": "^4.26.5",
@@ -54,6 +62,7 @@
     "@types/node": "^16.0.0",
     "@types/pino": "^6.3.8",
     "@types/supertest": "^2.0.11",
+    "@types/uuid": "^8.3.1",
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
     "codecov": "^3.8.2",
