@@ -28,6 +28,9 @@ jobs:
 
       - name: Deps Autofix
         run: |
+          git config --global user.name '${{ github.event.commits[0].author.name }}'
+          git config --global user.email '${{ github.event.commits[0].author.email }}'
+
           LAST_COMMIT=$(git log -1 --pretty=format:"%s")
 
           git checkout $(git log -n1 --skip 1 --oneline yarn.lock | awk '{print $1;}') -- yarn.lock
