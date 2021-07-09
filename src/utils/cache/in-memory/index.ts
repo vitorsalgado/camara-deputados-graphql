@@ -1,6 +1,7 @@
 import { CacheService } from '@app/utils/cache/cache.service'
+import { Optional } from '@app/utils/func'
 
-export class CacheInmemoryService implements CacheService {
+export class CacheInMemoryService implements CacheService {
   private readonly cache: Map<string, any>
 
   constructor(cache?: Map<string, any>) {
@@ -12,11 +13,11 @@ export class CacheInmemoryService implements CacheService {
     return Promise.resolve(value)
   }
 
-  get<T>(key: string): Promise<T | null> {
-    return Promise.resolve(this.cache.get(key))
+  get<T>(key: string): Promise<Optional<T>> {
+    return Promise.resolve(Optional.ofNullable(this.cache.get(key)))
   }
 
-  async getAdding<T>(key: string, _ttl: number, adder: () => Promise<T>): Promise<T> {
+  async getAndUpdate<T>(key: string, _ttl: number, adder: () => Promise<T>): Promise<T> {
     const data = this.cache.get(key)
 
     if (!data) {
@@ -45,5 +46,9 @@ export class CacheInmemoryService implements CacheService {
   clear(): Promise<void> {
     this.cache.clear()
     return Promise.resolve()
+  }
+
+  quit(): Promise<void> {
+    return Promise.resolve(undefined)
   }
 }

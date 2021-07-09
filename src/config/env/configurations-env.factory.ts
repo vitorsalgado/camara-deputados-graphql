@@ -13,7 +13,8 @@ export class EnvConfigurationsFactory implements ConfigurationsFactory {
       api: {
         congress: { url: env.CONGRESS_API_URL, loggerEnabled: env.CONGRESS_API_LOG_ENABLED }
       },
-      gql: { playground: env.GQL_PLAYGROUND },
+      graphql: { graphiql: env.GQL_GRAPHIQL },
+      cache: { strategy: env.CACHE_STRATEGY },
       redis: { connectionString: env.REDIS_CONNECTION_STRING }
     }
   }

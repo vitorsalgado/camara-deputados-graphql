@@ -1,38 +1,39 @@
 import Redis from 'ioredis'
 import { CacheService } from '@app/utils/cache/cache.service'
+import { Optional } from '@app/utils/func'
 
 export class CacheRedisService implements CacheService {
   constructor(private readonly redis: Redis.Redis) {}
 
-  add<T>(key: string, value: T, ttl: number): Promise<T> {
+  async add<T>(key: string, value: T, ttl: number): Promise<T> {
     return this.redis.setex(key, ttl, JSON.stringify(value)).then(() => value)
   }
 
-  get<T>(key: string): Promise<T | null> {
-    return this.redis.get(key).then(cached => {
-      if (cached) {
-        return JSON.parse(cached)
-      }
+  async get<T>(key: string): Promise<Optional<T>> {
+    const cached = await this.redis.get(key)
 
-      return null
-    })
+    if (cached) {
+      return Optional.of(JSON.parse(cached))
+    }
+
+    return Optional.empty()
   }
 
-  async getAdding<T>(key: string, ttl: number, adder: () => Promise<T>): Promise<T> {
+  async getAndUpdate<T>(key: string, ttl: number, adder: () => Promise<T>): Promise<T> {
     const data = await this.get<T>(key)
 
-    if (!data) {
+    if (data.isEmpty()) {
       const newData = await adder()
       await this.add(key, newData, ttl)
 
       return newData
     }
 
-    return data
+    return data.get()
   }
 
   getOr<T>(key: string, defaultValue: T): Promise<T> {
-    return this.get<T>(key).then(cached => cached || defaultValue)
+    return this.get<T>(key).then(cached => cached.getOrDefault(defaultValue))
   }
 
   has(key: string): Promise<boolean> {
@@ -45,5 +46,9 @@ export class CacheRedisService implements CacheService {
 
   async clear(): Promise<void> {
     await this.redis.flushall()
+  }
+
+  async quit(): Promise<void> {
+    await this.redis.quit()
   }
 }

@@ -21,8 +21,12 @@ export interface Configurations {
     }
   }
 
-  gql: {
-    playground: string
+  graphql: {
+    graphiql: boolean | string
+  }
+
+  cache: {
+    strategy: string
   }
 
   redis: {
