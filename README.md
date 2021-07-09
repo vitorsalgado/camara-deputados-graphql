@@ -10,7 +10,20 @@
 
 ## Other Languages
 
-* [Português Brasil](README.pt-br.md)
+- [Português Brasil](README.pt-br.md)
+
+## Content
+
+- [Overview](#overview)
+- [Demo](#demo)
+- [Open Data](#open-data---chamber-of-deputies-api)
+- [Tech](#tech)
+- [Dev](#dev)
+- [Configurations](#configurations)
+- [Running](#running)
+- [Tests](#tests)
+- [Project Structure](#project-structure)
+- [License](#license)
 
 ## Overview
 
@@ -41,7 +54,9 @@ application uses to get all data.
 * Docker / Docker Compose
 * ESLint / Prettier / Husky / Lint Staged
 
-## Dev &middot; [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+## Dev
+
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
 This project uses a mix of tools to enforce code-style and quality.  
 **ESLint** is used for lint, **Husky**, **Pretties** and **Lint Staged** when configured, ensures that no files will be
@@ -101,7 +116,9 @@ To execute an environment with a **Redis** instance and minimalist application c
 make up
 ```
 
-## Tests &middot; [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
+## Tests
+
+[![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 
 The test framework of this project is **Jest**.  
 **SuperTest** and **Nock** are used for integration tests, simulating API integrations.  
@@ -134,6 +151,8 @@ The project layout:
   - utils - Support code for application. Utilities specific for a domain needs to go on the respective domain folder
     inside *features*
 
-## License &middot; [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvitorsalgado%2Fcamara-deputados-graphql.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvitorsalgado%2Fcamara-deputados-graphql?ref=badge_shield)
+## License
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvitorsalgado%2Fcamara-deputados-graphql.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvitorsalgado%2Fcamara-deputados-graphql?ref=badge_shield)
 
 This project is [Apache Licensed](LICENSE).
