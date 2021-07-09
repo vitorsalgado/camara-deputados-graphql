@@ -41,7 +41,7 @@ application uses to get all data.
 * Docker / Docker Compose
 * ESLint / Prettier / Husky / Lint Staged
 
-## Dev
+## Dev &middot; [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
 This project uses a mix of tools to enforce code-style and quality.  
 **ESLint** is used for lint, **Husky**, **Pretties** and **Lint Staged** when configured, ensures that no files will be
