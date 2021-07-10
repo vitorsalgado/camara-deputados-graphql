@@ -23,22 +23,32 @@ jobs:
         with:
           node-version: 14.x
 
-      - name: Deps Autofix
+      - name: Git Config
         run: |
           git config --global user.name '${{ github.event.commits[0].author.name }}'
           git config --global user.email '${{ github.event.commits[0].author.email }}'
 
-          LAST_COMMIT=$(git log -1 --pretty=format:"%s")
+      - name: Get Last Commit
+        run: |
+          echo "PRIOR_COMMIT=$(git log -1 --pretty=format:"%s")" >> $GITHUB_ENV
 
+      - name: Rollback yarn.lock
+        run: |
           git checkout $(git log -n1 --skip 1 --oneline yarn.lock | awk '{print $1;}') -- yarn.lock
           yarn
 
-          PKG=$(yarn dependabot:utils pkg --title $LAST_COMMIT)
-          FROM=$(yarn dependabot:utils from --title $LAST_COMMIT)
-          TO=$(yarn dependabot:utils to --title $LAST_COMMIT)
-          TYPE_AND_SCOPE=$(yarn dependabot:utils type-and-scope --title $LAST_COMMIT)
+      - name: Deps Autofix
+        run: |
+          echo "Prior commit is: ${{ env.PRIOR_COMMIT }}"
 
-          yarn up $PKG $FROM@$^TO
+          PKG=$(yarn dependabot:utils pkg --title ${{ env.PRIOR_COMMIT }})
+          FROM=$(yarn dependabot:utils from --title ${{ env.PRIOR_COMMIT }})
+          TO=$(yarn dependabot:utils to --title ${{ env.PRIOR_COMMIT }})
+          TYPE_AND_SCOPE=$(yarn dependabot:utils type-and-scope --title ${{ env.PRIOR_COMMIT }})
+
+          echo "Update will be: $PKG from $FROM to $TO"
+
+          yarn up $PKG $FROM@$^$TO
           yarn
 
           git add yarn.lock package.json
