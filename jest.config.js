@@ -5,20 +5,15 @@ module.exports = {
   collectCoverage: false,
   restoreMocks: true,
   transform: { '^.+\\.tsx?$': 'ts-jest' },
-  testEnvironment: 'node',
-  rootDir: __dirname,
   globals: {
     'ts-jest': {
       tsconfig: './tsconfig.test.json'
     }
   },
-  reporters: ['default'],
-  watchPathIgnorePatterns: ['coverage'],
   projects: ['<rootDir>'],
-  collectCoverageFrom: ['**/src/*/**/*.ts', '!**/__mocks__/**', '!**/__tests__/**', '!**/dist/**', '!scripts/*'],
-  coveragePathIgnorePatterns: ['/dist/', '/node_modules/'],
-  modulePathIgnorePatterns: ['dist', 'scripts/*'],
-  testPathIgnorePatterns: ['/node_modules/', '/dist/', '/scripts/'],
+  collectCoverageFrom: ['**/src/*/**/*.ts', '!**/__fixtures__/**', '!**/__tests__/**'],
+  coveragePathIgnorePatterns: ['<rootDir>/dist/', '/node_modules/', '<rootDir>/scripts', '<rootDir>/tools'],
+  testPathIgnorePatterns: ['<rootDir>/dist/', '/node_modules/', '<rootDir>/scripts', '<rootDir>/tools'],
   moduleNameMapper: {
     '^@app/(.*)$': '<rootDir>/src/$1'
   },
