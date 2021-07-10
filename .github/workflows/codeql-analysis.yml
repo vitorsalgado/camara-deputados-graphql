@@ -1,4 +1,4 @@
-name: "code_ql"
+name: "code-ql"
 
 on:
   push:
@@ -44,14 +44,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Config Yarn
-        run: |
-          yarn set version berry
-          yarn --version
-
       - name: Install + Build
         run: |
-          yarn
+          make deps
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v1

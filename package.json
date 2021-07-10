@@ -10,18 +10,19 @@
     "start:dev": "nodemon --ext js,ts,json,graphql,env src/cmd/srv/index.ts",
     "cli": "ts-node src/cmd/cli/index.ts",
     "test": "jest --detectOpenHandles --logHeapUsage",
-    "test:ci": "yarn test --colors --coverage --ci",
+    "test:coverage": "npm run test -- --coverage",
+    "test:ci": "npm run test -- --colors --coverage --ci",
     "test:coverage:upload": "codecov -f coverage/*.json",
     "build": "tsc --project tsconfig.build.json && node scripts/copy-schemas",
-    "postinstall": "husky install || true",
+    "postinstall": "husky install",
+    "prepare": "husky install",
     "lint": "eslint --ext .ts,.js .",
     "prettier": "prettier 'src/**' --write --ignore-unknown",
     "prettier:ci": "prettier --check 'src/**' --ignore-unknown",
     "deps-utils": "node scripts/deps-utils/index.js"
   },
   "engines": {
-    "node": ">=14.17",
-    "yarn": ">=2.4.2"
+    "node": ">=14.17"
   },
   "author": {
     "name": "Vitor Hugo Salgado",

@@ -28,33 +28,19 @@ jobs:
         with:
           node-version: 14.x
 
-      - name: Get Yarn Cache
-        id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-
-      - name: Yarn Cache
-        uses: actions/cache@v2
-        with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: yarn2-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            yarn2-
-
       - name: Deps
         run: |
-          yarn --immutable
+          make deps
 
       - name: Lint
         run: |
-          yarn lint
-          yarn prettier:ci
+          make lint
 
       - name: Test
-        run: |
-          yarn test:ci
-          yarn test:coverage:upload
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        run: |
+          make test
 
   deploy:
     needs:

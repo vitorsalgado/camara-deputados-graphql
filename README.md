@@ -72,11 +72,11 @@ Check this **[Joi schema](src/config/env/env.schema.ts)**, all application envir
 
 ### Installing Dependencies
 
-**Yarn 2** is the chosen package manager for this project.  
+**NPM** is the chosen package manager for this project.  
 To install dependencies, run:
 
 ```
-yarn
+npm i
 ```
 
 ### Local Development
@@ -84,7 +84,7 @@ yarn
 To start a local development environment with **Nodemon**, run:
 
 ```
-yarn start:dev
+npm run start:dev
 ```
 
 ### Local Development with Docker Compose
@@ -92,7 +92,7 @@ yarn start:dev
 To start a local development environment with Docker Compose, run:
 
 ```
-make dev
+make dev-docker
 ```
 
 This **Docker Compose** contains a container that executes the application with **Nodemon**
@@ -103,8 +103,8 @@ and a container for **Redis**.
 To build TypeScript and execute the application, run:
 
 ```
-yarn build
-yarn start
+npm run build
+npm start
 ```
 
 ### Docker
@@ -125,7 +125,7 @@ The test framework of this project is **Jest**.
 To execute the tests, run:
 
 ```
-yarn test
+npm test
 ```
 
 ## Project Structure

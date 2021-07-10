@@ -8,7 +8,11 @@ help:
 up: ## Run the project using Docker Compose
 	@docker-compose -f ./deployments/docker-compose.yml --env-file .env up
 
-dev: ## Run dev environment
+.PHONY: dev
+dev: ## Run local dev environment
+	npm run start:dev
+
+dev-docker: ## Run dev environment with Docker Compose
 	@docker-compose -f ./deployments/docker-compose-dev.yml --env-file .env up
 
 down: ## Stop and kill all Docker containers
@@ -17,4 +21,17 @@ down: ## Stop and kill all Docker containers
 
 rebuild: ## Stop, remove and rebuild all Docker containers
 	@docker-compose -f ./deployments/docker-compose.yml --env-file .env down --remove-orphans --volumes
-	@docker-compose -f ./deployments/docker-compose.yml --env-file .env build
+	@docker-compose -f ./deployments/docker-compose.yml --verbose --env-file .env build
+
+.PHONY: deps
+deps: ## Install dependencies on CI environment
+	npm ci
+
+.PHONY: test
+test: ## Run tests for CI
+	npm run test:ci
+	npm run test:coverage:upload
+
+lint: ## Run all lint and code style tools
+	npm run lint
+	npm run prettier:ci
