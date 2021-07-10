@@ -3,7 +3,7 @@ import Path from 'path'
 
 describe('Utils :: File', function () {
   it('should load all file names recursively considering the filter predicated', function () {
-    const rootDir = Path.join(__dirname, '__test')
+    const rootDir = Path.join(__dirname, '__fixtures__')
     const filter = (file: string) => file.indexOf('.txt') > -1
 
     const files = getFiles(rootDir, filter)

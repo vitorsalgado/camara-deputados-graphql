@@ -17,7 +17,7 @@
     "lint": "eslint --ext .ts,.js .",
     "prettier": "prettier 'src/**' --write --ignore-unknown",
     "prettier:ci": "prettier --check 'src/**' --ignore-unknown",
-    "dependabot:utils": "node scripts/dependabot-utils/index.js"
+    "deps-utils": "node scripts/deps-utils/index.js"
   },
   "engines": {
     "node": ">=14.17",
