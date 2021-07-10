@@ -3,7 +3,7 @@
 FROM node:14 AS builder
 WORKDIR /opt/app
 
-COPY package*.json .
+COPY package*.json ./
 RUN npm install --omit optional
 COPY . .
 RUN npm run build
