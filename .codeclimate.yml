@@ -22,3 +22,6 @@ plugins:
     config:
       extensions:
         - .ts
+        - .js
+  editorconfig:
+    enabled: true
