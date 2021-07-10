@@ -46,7 +46,7 @@ jobs:
 
           echo "Update will be: $PKG from $FROM to $TO"
 
-          yarn up $PKG "$FROM@^$TO"
+          yarn up "$PKG@^$TO"
           yarn
 
           git add yarn.lock package.json
