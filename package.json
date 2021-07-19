@@ -54,7 +54,7 @@
     "mercurius": "^8.0.0",
     "newrelic": "^7.5.2",
     "pino": "^6.11.3",
-    "pino-pretty": "^5.1.1",
+    "pino-pretty": "^5.1.2",
     "tsconfig-paths": "^3.10.1",
     "tslib": "^2.3.0",
     "uuid": "^8.3.2"
