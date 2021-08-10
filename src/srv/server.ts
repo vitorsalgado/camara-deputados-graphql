@@ -19,22 +19,23 @@ declare module 'mercurius' {
 }
 
 export class AppServer {
-  private readonly fastifyApp: FastifyInstance
+  private readonly fastify: FastifyInstance
   private readonly port: number
   private readonly host: string
 
   constructor(private readonly configurations: Configurations) {
     this.port = configurations.server.port
     this.host = configurations.server.host
-    this.fastifyApp = Fastify<Server>({ logger: this.configurations.server.loggerEnabled })
+
+    this.fastify = Fastify<Server>({ logger: this.configurations.server.loggerEnabled })
   }
 
   build(): FastifyInstance {
-    this.fastifyApp.register(GracefulShutdownPlugin)
+    this.fastify.register(GracefulShutdownPlugin)
 
     const features = graphqlFeatures(this.configurations)
 
-    this.fastifyApp.register(Mercurius, {
+    this.fastify.register(Mercurius, {
       graphiql: this.configurations.graphql.graphiql,
       onlyPersisted: false,
       context: buildContext,
@@ -43,19 +44,19 @@ export class AppServer {
       loaders: features.Loaders
     })
 
-    configureRoutes(this.fastifyApp)
+    configureRoutes(this.fastify)
 
-    return this.fastifyApp
+    return this.fastify
   }
 
   server(): Server {
-    return this.fastifyApp.server
+    return this.fastify.server
   }
 
   async start(): Promise<void> {
-    await this.fastifyApp.ready()
+    await this.fastify.ready()
 
-    return this.fastifyApp
+    return this.fastify
       .listen(this.port, this.host)
       .then(addr => Logger.info(`Server online on: ${addr}`))
       .catch(err => {
@@ -68,10 +69,10 @@ export class AppServer {
     await this.build()
     await this.start()
 
-    return this.fastifyApp
+    return this.fastify
   }
 
   async close(): Promise<void> {
-    return this.fastifyApp.close()
+    return this.fastify.close()
   }
 }
