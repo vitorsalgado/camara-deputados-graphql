@@ -18,6 +18,31 @@ module.exports = {
     '@typescript-eslint/no-dupe-class-members': ['error'],
     'no-useless-constructor': 'off',
     '@typescript-eslint/no-useless-constructor': ['error'],
-    '@typescript-eslint/no-inferrable-types': ['off']
+    '@typescript-eslint/no-inferrable-types': ['off'],
+
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object']
+      }
+    ],
+    'import/no-duplicates': ['off'],
+    'import/no-mutable-exports': ['error'],
+    'import/no-useless-path-segments': [
+      'error',
+      {
+        noUselessIndex: true
+      }
+    ],
+    'import/no-self-import': ['error'],
+    'import/export': ['error'],
+    'import/no-deprecated': ['error']
+  },
+  settings: {
+    'import/extensions': ['.js', '.ts'],
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts']
+    },
+    'import/internal-regex': '^@mockinho/'
   }
 }

@@ -1,6 +1,6 @@
+import Querystring from 'querystring'
 import { ApiResult, Link } from '@app/data/api'
 import { encode } from '@app/utils/encoding/base64'
-import Querystring from 'querystring'
 import { PagedResult } from '@app/utils/base/gql'
 
 export interface Pagination {

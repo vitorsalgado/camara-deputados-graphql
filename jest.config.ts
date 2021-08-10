@@ -1,6 +1,7 @@
-'use strict'
+import 'dotenv/config'
+import type { Config as JestConfig } from '@jest/types'
 
-module.exports = {
+const config: JestConfig.InitialOptions = {
   verbose: true,
   collectCoverage: false,
   restoreMocks: true,
@@ -26,3 +27,5 @@ module.exports = {
     }
   }
 }
+
+export default config

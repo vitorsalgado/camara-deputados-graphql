@@ -1,7 +1,7 @@
 describe('TypeScript Paths Mapping Fix', function () {
   describe('Reading from src/', function () {
     it('should allow usage of @app/ when DIST_MODE is 0', async function () {
-      await import('./index')
+      await import('.')
 
       const config = await import('@app/config')
       expect(config.provideConfig().runtime.isTest).toBeTruthy()
@@ -12,7 +12,7 @@ describe('TypeScript Paths Mapping Fix', function () {
     it('should allow usage of @app/ when DIST_MODE is 1 (True)', async function () {
       process.env.DIST_MODE = '1'
 
-      await import('./index')
+      await import('.')
 
       const config = await import('@app/config')
       expect(config.provideConfig().runtime.isTest).toBeTruthy()

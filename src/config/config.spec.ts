@@ -1,5 +1,5 @@
-import { provideConfig } from './'
 import { EnvConfigurationsFactory } from './env'
+import { provideConfig } from '.'
 
 describe('Configurations', function () {
   it('should setup with environment variables', function () {

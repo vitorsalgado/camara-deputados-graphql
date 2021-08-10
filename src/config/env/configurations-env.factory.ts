@@ -1,4 +1,4 @@
-import { parseConfigurations } from '@app/config'
+import { parseConfigurations } from '@app/config/env/env.schema'
 import { Configurations } from '@app/config/configurations'
 import { ConfigurationsFactory } from '@app/config/configurations.factory'
 

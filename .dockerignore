@@ -16,7 +16,7 @@ tools/
 .gitattributes
 .prettierignore
 .prettierrc.json
-jest.config.js
+jest.config.ts
 lint-staged.config.js
 README.md
 *.tsbuildinfo

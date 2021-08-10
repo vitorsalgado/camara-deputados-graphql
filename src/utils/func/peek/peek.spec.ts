@@ -1,4 +1,4 @@
-import { peek } from './index'
+import { peek } from '.'
 
 describe('Peek', function () {
   it('should execute the function with the argument without changing it', function () {

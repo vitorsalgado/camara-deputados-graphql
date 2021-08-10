@@ -1,29 +1,39 @@
-<a href="https://github.com/vitorsalgado/camara-deputados-graphql" target="_blank"><img src="docs/assets/logo.png" alt="Câmera dos Deputados GraphQL Logo" width="85px" align="right" /></a>
+<h1 align='center'>GraphQL API &middot; Chamber of Deputies of Brazil</h1>
 
-# GraphQL API &middot; Chamber of Deputies of Brazil
+<p align='center'>
+  <img src="docs/assets/logo.png" alt="Repository Logo" width="85px" height='85px' />
+  <br />
+  <i>Proxy GraphQL exposing Brazilian Chamber of Deputies Rest API using TypeScript.</i>
+</p>
 
-[![ci](https://github.com/vitorsalgado/camara-deputados-graphql/actions/workflows/ci.yml/badge.svg)](https://github.com/vitorsalgado/camara-deputados-graphql/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/vitorsalgado/camara-deputados-graphql/branch/main/graph/badge.svg?token=24HGDVTL7W)](https://codecov.io/gh/vitorsalgado/camara-deputados-graphql)
-[![Maintainability](https://api.codeclimate.com/v1/badges/0755f928bd5117d669a9/maintainability)](https://codeclimate.com/github/vitorsalgado/camara-deputados-graphql/maintainability)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-![GitHub top language](https://img.shields.io/github/languages/top/vitorsalgado/camara-deputados-graphql)
+<p align='center'>
+  <a href='https://graphql-chamber-deputies-br.herokuapp.com/graphiql' target='_blank'><strong>graphql-chamber-deputies-br.herokuapp.com/graphiql</strong></a>
+</p>
+
+<p align='center'>
+  <a href="https://github.com/vitorsalgado/camara-deputados-graphql/actions/workflows/ci.yml">
+    <img src="https://github.com/vitorsalgado/camara-deputados-graphql/actions/workflows/ci.yml/badge.svg" alt="GitHub Action Status" />
+  </a>
+  <a href="https://codecov.io/gh/vitorsalgado/camara-deputados-graphql">
+    <img src="https://codecov.io/gh/vitorsalgado/camara-deputados-graphql/branch/main/graph/badge.svg?token=24HGDVTL7W" alt="Codecov" />
+  </a>
+  <a href="https://codeclimate.com/github/vitorsalgado/camara-deputados-graphql/maintainability">
+    <img src="https://api.codeclimate.com/v1/badges/0755f928bd5117d669a9/maintainability" alt="Maintainability" />
+  </a>
+  <a href="https://github.com/prettier/prettier">
+    <img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat" alt="Prettier"/>
+  </a>
+  <a href="https://conventionalcommits.org">
+    <img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg" alt="Conventional Commits"/>
+  </a>
+  <a href="https://github.com/vitorsalgado/camara-deputados-graphql">
+    <img src="https://img.shields.io/github/languages/top/vitorsalgado/camara-deputados-graphql" alt="Top Language"/>
+  </a>
+</p>
 
 ## Other Languages
 
 - [Português Brasil](README.pt-br.md)
-
-## Content
-
-- [Overview](#overview)
-- [Demo](#demo)
-- [Open Data](#open-data---chamber-of-deputies-api)
-- [Tech](#tech)
-- [Dev](#dev)
-- [Configurations](#configurations)
-- [Running](#running)
-- [Tests](#tests)
-- [Project Structure](#project-structure)
-- [License](#license)
 
 ## Overview
 
@@ -127,29 +137,6 @@ To execute the tests, run:
 ```
 npm test
 ```
-
-## Project Structure
-
-The project structure groups business code by **domain** instead of the traditional
-*controllers, services, repositories, models*.   
-The folder organization is part based on [Go Project Layout](https://github.com/golang-standards/project-layout).  
-Even though it is a layout for Go projects, the idea is interesting and suites here too.  
-The project layout:
-
-- deployments - Deployments files for any environment
-- docs - Project documentations
-- scripts - Support scripts for the project
-- src
-  - cmd - Start scripts, separated by folders. Could contain the start script for HTTP Server and Worker.
-  - config - Application configurations
-  - data - Shared data components. In this case, the Chamber of Deputies API is here because it is the base and shared
-    for all features.
-  - features - All feature components goes here separated by *domain*
-    - deputies
-    - parties
-  - srv - Application Server components
-  - utils - Support code for application. Utilities specific for a domain needs to go on the respective domain folder
-    inside *features*
 
 ## License
 
