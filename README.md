@@ -1,13 +1,13 @@
 <h1 align='center'>GraphQL API &middot; Chamber of Deputies of Brazil</h1>
 
 <p align='center'>
-  <img src="docs/assets/logo.png" alt="Repository Logo" width="85px" height='85px' />
+  <img src="docs/assets/logo.png" alt="Repository Logo" width='85px' height='85px' />
   <br />
   <i>Proxy GraphQL exposing Brazilian Chamber of Deputies Rest API using TypeScript.</i>
 </p>
 
 <p align='center'>
-  <a href='https://graphql-chamber-deputies-br.herokuapp.com/graphiql' target='_blank'><strong>graphql-chamber-deputies-br.herokuapp.com/graphiql</strong></a>
+  <a href='https://graphql-chamber-deputies-br.herokuapp.com/graphiql' target='_blank'><strong>Sample GraphiQL</strong></a>
 </p>
 
 <p align='center'>
@@ -45,7 +45,7 @@ This is a **Work in Progress**.
 ## Demo
 
 A **demo** application is available
-on: [https://graphql-chamber-deputies-br.herokuapp.com/playground](https://graphql-chamber-deputies-br.herokuapp.com/playground)
+on: [https://graphql-chamber-deputies-br.herokuapp.com/graphiql](https://graphql-chamber-deputies-br.herokuapp.com/graphiql)
 
 ## Open Data - Chamber of Deputies API
 
@@ -65,8 +65,6 @@ application uses to get all data.
 * ESLint / Prettier / Husky / Lint Staged
 
 ## Dev
-
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
 This project uses a mix of tools to enforce code-style and quality.  
 **ESLint** is used for lint, **Husky**, **Pretties** and **Lint Staged** when configured, ensures that no files will be
