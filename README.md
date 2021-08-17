@@ -24,10 +24,7 @@
     <img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat" alt="Prettier"/>
   </a>
   <a href="https://conventionalcommits.org">
-    <img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg" alt="Conventional Commits"/>
-  </a>
-  <a href="https://github.com/vitorsalgado/camara-deputados-graphql">
-    <img src="https://img.shields.io/github/languages/top/vitorsalgado/camara-deputados-graphql" alt="Top Language"/>
+    <img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-blue.svg" alt="Conventional Commits"/>
   </a>
 </p>
 
@@ -47,7 +44,7 @@ This is a **Work in Progress**.
 A **demo** application is available
 on: [https://graphql-chamber-deputies-br.herokuapp.com/graphiql](https://graphql-chamber-deputies-br.herokuapp.com/graphiql)
 
-## Open Data - Chamber of Deputies API
+## Chamber of Deputies Open Data
 
 This is the [Swagger](https://dadosabertos.camara.leg.br/swagger/api.html) documentation for the API which this
 application uses to get all data.
@@ -74,7 +71,7 @@ committed without following project standards.
 
 The application **Environment Variables** for configurations and the lib **DotEnv** allows you to change values on local
 environment. Create a file **.env** on project root and place there the env vars you want to change.  
-Check this **[Joi schema](src/config/env/env.schema.ts)**, all application environment variables are there.
+Check this **[Joi schema](src/config/env/EnvSchema.ts)**, all application environment variables are there.
 
 ## Running
 

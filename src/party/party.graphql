@@ -1,0 +1,55 @@
+# Types
+# ---
+type PartySimple implements Node {
+  id: ID!
+  acronym: String!
+  name: String!
+  uri: String!
+}
+
+type Party {
+  id: ID!
+  acronym: String!
+  name: String!
+  uri: String!
+  leader: Deputy
+}
+
+type PartySimpleEdge implements Edge {
+  cursor: String
+  node: PartySimple
+}
+
+type PartySimpleConnection implements Connection {
+  pageInfo: PageInfo
+  edges: [PartySimpleEdge]
+}
+
+# Enums
+# ---
+enum PartiesOrderField {
+  ID
+  ACRONYM
+  NAME
+  STARTDATE
+  ENDATE
+}
+
+# Queries
+# ---
+extend type Query {
+  party(id: ID!): Party
+  partyByAcronym(acronym: String!): Party
+  parties(
+    acronym: String
+    startDate: String
+    endDate: String
+    termId: Int
+    after: Cursor
+    first: Int
+    before: Cursor
+    last: Int
+    order: Order
+    orderBy: PartiesOrderField
+  ): PartySimpleConnection
+}

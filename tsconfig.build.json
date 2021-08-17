@@ -3,10 +3,13 @@
   "exclude": [
     "dist",
     "node_modules",
-    "__test",
+    "**/__tests__/",
+    "**/__fixtures__",
     "**/*.spec.ts",
     "**/*.spec.js",
     "*.spec.ts",
-    "**/spec.ts"
+    "**/spec.ts",
+    "*.config.ts",
+    "tools"
   ]
 }

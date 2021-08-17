@@ -1,0 +1,23 @@
+# Types
+# ---
+type Deputy implements Node {
+  id: ID!
+  name: String!
+  party: Party
+}
+
+type DeputyEdge implements Edge {
+  cursor: String
+  node: Deputy
+}
+
+type DeputyConnection implements Connection {
+  pageInfo: PageInfo
+  edges: [DeputyEdge]
+}
+
+# Queries
+# ---
+extend type Query {
+  deputies(first: Int, after: String): DeputyConnection
+}

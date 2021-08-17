@@ -1,0 +1,40 @@
+# Empty Query
+# This query allows other query types to extend and be declared in separate file per domain type
+# ---
+type Query {
+  foo: String
+}
+
+# Pagination Types
+# ---
+type PageInfo {
+  hasPreviousPage: Boolean
+  hasNextPage: Boolean
+  startCursor: String
+  endCursor: String
+}
+
+interface Node {
+  id: ID!
+}
+
+interface Edge {
+  cursor: String
+  node: Node
+}
+
+interface Connection {
+  pageInfo: PageInfo
+  edges: [Edge]
+}
+
+# Project Specific Scalar Types
+# ---
+scalar Cursor
+
+# Enums
+# ---
+enum Order {
+  ASC
+  DESC
+}

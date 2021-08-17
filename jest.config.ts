@@ -15,9 +15,7 @@ const config: JestConfig.InitialOptions = {
   collectCoverageFrom: ['**/src/*/**/*.ts', '!**/__fixtures__/**', '!**/__tests__/**'],
   coveragePathIgnorePatterns: ['<rootDir>/dist/', '/node_modules/', '<rootDir>/scripts', '<rootDir>/tools'],
   testPathIgnorePatterns: ['<rootDir>/dist/', '/node_modules/', '<rootDir>/scripts', '<rootDir>/tools'],
-  moduleNameMapper: {
-    '^@app/(.*)$': '<rootDir>/src/$1'
-  },
+  testMatch: ['**/?(*.)+(spec|test).[jt]s?(x)'],
   coverageThreshold: {
     global: {
       branches: 60,
