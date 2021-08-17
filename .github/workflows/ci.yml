@@ -16,7 +16,7 @@ on:
       - '*.md'
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -44,7 +44,7 @@ jobs:
 
   deploy:
     needs:
-      - build
+      - test
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
@@ -59,3 +59,12 @@ jobs:
           heroku container:login
           heroku container:push -a $HEROKU_APP web
           heroku container:release -a $HEROKU_APP web
+
+  automerge:
+    needs:
+      - test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: fastify/github-action-merge-dependabot@v2.3.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
