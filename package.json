@@ -61,7 +61,7 @@
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^12.1.4",
-    "@types/ioredis": "^4.26.5",
+    "@types/ioredis": "^4.26.7",
     "@types/jest": "^26.0.24",
     "@types/node": "^16.3.0",
     "@types/pino": "^6.3.9",
