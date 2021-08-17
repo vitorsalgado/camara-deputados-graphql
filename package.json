@@ -49,7 +49,7 @@
     "dotenv": "^10.0.0",
     "drizzle-http": "^2.2.0",
     "fastify": "^3.20.2",
-    "ioredis": "^4.27.6",
+    "ioredis": "^4.27.7",
     "joi": "^17.4.2",
     "mercurius": "^8.1.2",
     "newrelic": "^8.1.0",
