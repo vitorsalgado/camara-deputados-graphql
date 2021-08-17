@@ -62,7 +62,7 @@
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^12.1.4",
     "@types/ioredis": "^4.26.7",
-    "@types/jest": "^26.0.24",
+    "@types/jest": "^27.0.1",
     "@types/node": "^16.6.1",
     "@types/pino": "^6.3.9",
     "@types/supertest": "^2.0.11",
