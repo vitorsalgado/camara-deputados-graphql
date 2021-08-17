@@ -21,7 +21,7 @@ const Logger = Pino({
 })
 
 ;(async function () {
-  Logger.info('Copying GraphQL Schemas to build directory ...\n')
+  Logger.info('Copying GraphQL Schemas to build output directory ...')
 
   const criteria = 'src/**/*.graphql'
   const schemaRefs = await Globby(criteria, {
@@ -32,17 +32,15 @@ const Logger = Pino({
 
   for (const schemaRef of schemaRefs) {
     const schema = schemaRef.substring(schemaRef.lastIndexOf('/') + 1, schemaRef.length)
-    Logger.info(`Schema: ${schema}`)
-    Logger.info(`Schema Dir: ${schemaRef}`)
+    Logger.info(`Copying Schema: ${schema}`)
 
     const path = schemaRef.substring(0, schemaRef.lastIndexOf('/'))
     const distPath = path.replace('src/', 'dist/')
     const newRef = schemaRef.replace('src/', 'dist/')
 
-    Logger.info(`Ensuring the path exists and copying schema ...\n`)
     FsExt.mkdirpSync(distPath)
     FsExt.copySync(schemaRef, newRef)
   }
 
-  Logger.info('Done Copying GraphQL Schemas. Exiting ...')
+  Logger.info('Done Copying GraphQL Schemas.')
 })()

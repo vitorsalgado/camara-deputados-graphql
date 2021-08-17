@@ -21,9 +21,9 @@
     "noImplicitReturns": true,
     "strict": true,
     "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "composite": true,
     "skipLibCheck": true,
 
     "outDir": "dist",

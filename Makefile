@@ -17,7 +17,9 @@ dev-docker: ## Run dev environment with Docker Compose
 
 down: ## Stop and kill all Docker containers
 	@docker-compose -f ./deployments/docker-compose.yml --env-file .env down --remove-orphans --volumes
+	@docker-compose -f ./deployments/docker-compose.yml  --env-file .env rm -f
 	@docker-compose -f ./deployments/docker-compose-dev.yml --env-file .env down --remove-orphans --volumes
+	@docker-compose -f ./deployments/docker-compose-dev.yml  --env-file .env rm -f
 
 rebuild: ## Stop, remove and rebuild all Docker containers
 	@docker-compose -f ./deployments/docker-compose.yml --env-file .env down --remove-orphans --volumes
