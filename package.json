@@ -86,7 +86,7 @@
     "nock": "^13.1.1",
     "nodemon": "^2.0.12",
     "prettier": "2.3.2",
-    "supertest": "^6.1.5",
+    "supertest": "^6.1.6",
     "ts-jest": "^27.0.5",
     "ts-node": "^10.2.0",
     "typescript": "^4.3.5"
