@@ -2,6 +2,8 @@ import { Server } from 'http'
 import Fastify, { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify'
 import Mercurius from 'mercurius'
 import { v4 as UUIDv4 } from 'uuid'
+import FastifyHelmet from 'fastify-helmet'
+import FastifyCors from 'fastify-cors'
 import { GracefulShutdownPlugin } from './utils/shutdown/GracefulShutdownPlugin'
 import { Configurations } from './config/Configurations'
 import { buildGraphQLSchemas } from './buildGraphQLSchemas'
@@ -28,17 +30,37 @@ export class GraphQLServer {
     this.port = configurations.server.port
     this.host = configurations.server.host
 
-    this.fastify = Fastify<Server>({ logger: this.configurations.server.loggerEnabled })
+    this.fastify = Fastify({ bodyLimit: 1048576 / 2, logger: this.configurations.server.loggerEnabled })
   }
 
   async build(): Promise<FastifyInstance> {
     const features = buildFeatures(this.fastify, this.configurations)
     const schemas = await buildGraphQLSchemas()
 
-    if (this.configurations.graphql.graphiql) {
-      this.fastify.get('/', async (request, reply) => reply.redirect('/graphiql'))
+    const helmetOptions: Record<string, unknown> = {
+      expectCt: true,
+      frameguard: true,
+      hidePoweredBy: true,
+      hsts: true,
+      noSniff: true,
+      permittedCrossDomainPolicies: { permittedPolicies: 'none' },
+      contentSecurityPolicy: { useDefaults: true }
     }
 
+    if (this.configurations.graphql.graphiql) {
+      this.fastify.get('/', async (request, reply) => reply.redirect('/graphiql'))
+
+      helmetOptions.contentSecurityPolicy = {
+        useDefaults: true,
+        directives: {
+          'script-src': ["'self' 'unsafe-eval' https://unpkg.com"],
+          'style-src': ["'self' 'unsafe-inline' https://unpkg.com"]
+        }
+      }
+    }
+
+    this.fastify.register(FastifyHelmet, helmetOptions)
+    this.fastify.register(FastifyCors, { origin: '*' })
     this.fastify.register(GracefulShutdownPlugin)
     this.fastify.register(Mercurius, {
       graphiql: this.configurations.graphql.graphiql,
