@@ -6,24 +6,24 @@ help:
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
 up: ## Run the project using Docker Compose
-	@docker-compose -f ./deployments/docker-compose.yml --env-file .env up
+	@docker-compose -f ./deployments/docker-compose.yml up
 
 .PHONY: dev
 dev: ## Run local dev environment
 	npm run start:dev
 
 dev-docker: ## Run dev environment with Docker Compose
-	@docker-compose -f ./deployments/docker-compose-dev.yml --env-file .env up
+	@docker-compose -f ./deployments/docker-compose-dev.yml up
 
 down: ## Stop and kill all Docker containers
-	@docker-compose -f ./deployments/docker-compose.yml --env-file .env down --remove-orphans --volumes
-	@docker-compose -f ./deployments/docker-compose.yml  --env-file .env rm -f
-	@docker-compose -f ./deployments/docker-compose-dev.yml --env-file .env down --remove-orphans --volumes
-	@docker-compose -f ./deployments/docker-compose-dev.yml  --env-file .env rm -f
+	@docker-compose -f ./deployments/docker-compose.yml down --remove-orphans --volumes
+	@docker-compose -f ./deployments/docker-compose.yml rm -f
+	@docker-compose -f ./deployments/docker-compose-dev.yml down --remove-orphans --volumes
+	@docker-compose -f ./deployments/docker-compose-dev.yml rm -f
 
 rebuild: ## Stop, remove and rebuild all Docker containers
-	@docker-compose -f ./deployments/docker-compose.yml --env-file .env down --remove-orphans --volumes
-	@docker-compose -f ./deployments/docker-compose.yml --verbose --env-file .env build
+	@docker-compose -f ./deployments/docker-compose.yml down --remove-orphans --volumes
+	@docker-compose -f ./deployments/docker-compose.yml --verbose build
 
 .PHONY: deps
 deps: ## Install dependencies on CI environment

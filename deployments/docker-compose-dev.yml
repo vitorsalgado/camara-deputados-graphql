@@ -11,7 +11,7 @@ services:
     init: true
     restart: on-failure
     ports:
-      - ${PORT}:4000
+      - "4000:4000"
     depends_on:
       - redis
 

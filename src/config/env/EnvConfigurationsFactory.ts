@@ -7,7 +7,7 @@ export class EnvConfigurationsFactory implements ConfigurationsFactory {
     const env = parseConfigurations(process.env)
 
     return {
-      runtime: { isTest: env.NODE_ENV === 'test' },
+      runtime: { isTest: env.NODE_ENV === 'test', isProd: env.NODE_ENV === 'production' },
       log: { level: env.LOG_LEVEL, pretty: env.LOG_PRETTY },
       server: { port: env.PORT, host: env.SERVER_HOST, loggerEnabled: env.SERVER_LOG_ENABLED },
       api: {

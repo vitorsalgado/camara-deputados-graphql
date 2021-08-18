@@ -1,6 +1,7 @@
 export interface Configurations {
   runtime: {
     isTest: boolean
+    isProd: boolean
   }
 
   log: {

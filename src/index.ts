@@ -24,7 +24,8 @@ process.on('unhandledRejection', (reason, promise) =>
   Logger.warn(`Unhandled rejection at: ${promise}. Reason: ${reason}`)
 )
 
-Logger.info(`
+if (!config.runtime.isProd)
+  Logger.info(`
   ____                                       ____                 _      ___  _
  / ___|___  _ __   __ _ _ __ ___  ___ ___   / ___|_ __ __ _ _ __ | |__  / _ \\| |
 | |   / _ \\| '_ \\ / _\` | '__/ _ \\/ __/ __| | |  _| '__/ _\` | '_ \\| '_ \\| | | | |

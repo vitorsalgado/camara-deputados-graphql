@@ -10,7 +10,7 @@ export const EnvSchema = Joi.object({
 
   // Server
   PORT: Joi.number().default(4000),
-  SERVER_HOST: Joi.string().default('localhost'),
+  SERVER_HOST: Joi.string().default('0.0.0.0'),
   SERVER_LOG_ENABLED: Joi.boolean().default(false),
 
   // Deputies API
