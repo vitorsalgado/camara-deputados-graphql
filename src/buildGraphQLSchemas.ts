@@ -3,7 +3,7 @@ import Path from 'path'
 import * as Util from 'util'
 import { buildSchema, GraphQLSchema } from 'graphql'
 import { Logger } from './utils/log/Logger'
-import { getFiles } from './utils/io/file'
+import { getFilenames } from './utils/io/getFilenames'
 import { peek } from './utils/peek'
 
 const readFile = Util.promisify(Fs.readFile)
@@ -14,7 +14,7 @@ export async function buildGraphQLSchemas(): Promise<GraphQLSchema> {
 
 const loadSchemas = (baseDir: string): Promise<string> =>
   Promise.all(
-    getFiles(baseDir, isSchema)
+    getFilenames(baseDir, isSchema)
       .map(peek(x => Logger.debug(`GraphQL Schema File: ${x}`)))
       .map(file => readFile(file))
   )

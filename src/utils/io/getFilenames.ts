@@ -10,16 +10,16 @@ import { resolve } from 'path'
  *
  * @returns array containing all file names
  */
-export const getFiles = (rootDir: string, filter: (file: string) => boolean, acc: string[] = []): string[] =>
+export const getFilenames = (rootDir: string, filter: (file: string) => boolean, acc: string[] = []): string[] =>
   readdirSync(rootDir)
     .map(directory => resolve(rootDir, directory))
     .map(file => {
       if (isDirectory(file)) {
-        return acc.concat(getFiles(file, filter, acc))
+        return acc.concat(getFilenames(file, filter, acc))
       }
 
       return filter(file) ? acc.concat(file) : acc
     })
-    .reduce((a, b) => a.concat(b))
+    .reduce((a, b) => a.concat(b), [])
 
 const isDirectory = (value: PathLike) => statSync(value).isDirectory()

@@ -1,12 +1,12 @@
 import Path from 'path'
-import { getFiles } from '../file'
+import { getFilenames } from '../getFilenames'
 
-describe('Utils :: File', function () {
+describe('getFilenames', function () {
   it('should load all file names recursively considering the filter predicated', function () {
     const rootDir = Path.join(__dirname, '__fixtures__')
     const filter = (file: string) => file.indexOf('.txt') > -1
 
-    const files = getFiles(rootDir, filter)
+    const files = getFilenames(rootDir, filter)
 
     expect(files).toHaveLength(7)
     expect(files.some(x => x.indexOf('.json') > -1)).toBeFalsy()
