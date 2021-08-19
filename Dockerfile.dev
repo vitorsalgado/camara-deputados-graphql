@@ -7,4 +7,4 @@ WORKDIR /opt/app
 RUN chown -R 1000:1000 /opt/app
 VOLUME /opt/app
 
-CMD npm run start:dev
+CMD npm start
