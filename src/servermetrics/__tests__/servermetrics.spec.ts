@@ -10,6 +10,6 @@ describe('Server Metrics', function () {
   afterAll(() => application.close())
 
   it('should return status 204 (No Content) when server is online', async function () {
-    await Supertest(application.server()).get('/health').expect(204)
+    await Supertest(application.server()).get('/live').expect(204)
   })
 })

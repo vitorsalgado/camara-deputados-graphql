@@ -1,23 +1,49 @@
 version: '3.8'
 
 services:
-  app:
+  graphapi:
     build:
       context: ../
-    container_name: app
+    container_name: graphapi
     init: true
     restart: on-failure
     ports:
       - "4000:4000"
     depends_on:
       - redis
+      - prometheus
+      - grafana
 
   redis:
     image: redis
     container_name: redis
     init: true
-    restart: on-failure
+    restart: unless-stopped
     ports:
       - "6379:6379"
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    restart: unless-stopped
+    ports:
+      - "9090:9090"
+    volumes:
+      - ../configs/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ../.data/prometheus/data:/prometheus
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - ../configs/grafana/grafana.env
+    volumes:
+      - ../.data/grafana:/var/lib/grafana
+      - ../configs/grafana/:/etc/grafana/provisioning/
+    depends_on:
+      - prometheus

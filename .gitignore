@@ -112,6 +112,9 @@ dist
 **/.pnp.*
 
 # Project
+tools/dev/
+
 .idea/
 .vscode/
-tools/dev/
+.terraform
+.data/
