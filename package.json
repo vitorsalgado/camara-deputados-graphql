@@ -50,7 +50,7 @@
   "dependencies": {
     "dotenv": "^10.0.0",
     "drizzle-http": "^2.2.0",
-    "fastify": "^3.21.0",
+    "fastify": "^3.21.1",
     "fastify-cors": "^6.0.2",
     "fastify-helmet": "^5.3.2",
     "ioredis": "^4.27.9",
