@@ -81,7 +81,7 @@
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-promise": "^5.1.1",
     "eslint-plugin-tsdoc": "^0.2.14",
     "fs-extra": "^10.0.0",
     "globby": "12.0.2",
