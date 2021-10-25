@@ -57,7 +57,7 @@
     "joi": "^17.4.2",
     "mercurius": "^8.6.0",
     "newrelic": "^8.5.0",
-    "pino": "^7.0.3",
+    "pino": "^7.0.5",
     "pino-pretty": "^7.1.0",
     "prom-client": "^14.0.0",
     "tslib": "^2.3.1",
