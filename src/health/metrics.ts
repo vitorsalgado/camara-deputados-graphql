@@ -1,4 +1,3 @@
-import { FastifyInstance } from 'fastify'
 import PrometheusClient from 'prom-client'
 
 const registry = new PrometheusClient.Registry()
@@ -15,10 +14,4 @@ const httpRequestDurationMicroseconds = new PrometheusClient.Histogram({
 
 registry.registerMetric(httpRequestDurationMicroseconds)
 
-export function serverMetricsRoutes(fastify: FastifyInstance): void {
-  fastify.get('/live', async (request, reply) => reply.status(204).send())
-
-  fastify.get('/metrics', async (request, reply) =>
-    reply.header('content-type', registry.contentType).send(await registry.metrics())
-  )
-}
+export { registry }

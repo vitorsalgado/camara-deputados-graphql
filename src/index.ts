@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-// Initializing components that needs to be ready before all other.
-// ---
 import 'dotenv/config'
 import 'newrelic'
 
@@ -14,8 +12,6 @@ import { attachToTerminationEvents } from './utils/runtime/attachToTerminationEv
 const config = provideConfig(new EnvConfigurationsFactory())
 const server = new GraphQLServer(config)
 
-// Handling common NodeJs process events
-// ---
 attachToTerminationEvents(server.close)
 
 process.on('uncaughtException', error => Logger.error(error))

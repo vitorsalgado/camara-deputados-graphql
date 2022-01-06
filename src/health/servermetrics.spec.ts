@@ -1,7 +1,7 @@
 import Supertest from 'supertest'
-import { provideConfig } from '../../config/provideConfig'
-import { modifyConfigForTest } from '../../utils/testing/modifyConfigForTest'
-import { GraphQLServer } from '../../GraphQLServer'
+import { provideConfig } from '../config/provideConfig'
+import { modifyConfigForTest } from '../utils/testing/modifyConfigForTest'
+import { GraphQLServer } from '../GraphQLServer'
 
 describe('Server Metrics', function () {
   const application = new GraphQLServer(modifyConfigForTest(provideConfig()))

@@ -5,12 +5,12 @@ import { encode } from '../../encoding/base64'
 export const Cursor = new GraphQLScalarType({
   name: 'Cursor',
 
-  serialize(value: number) {
+  serialize(value: unknown) {
     return encode(String(value))
   },
 
-  parseValue(value: string): number {
-    return parseInt(decode(value))
+  parseValue(value: unknown): number {
+    return parseInt(decode(value as string))
   },
 
   parseLiteral(ast: any) {

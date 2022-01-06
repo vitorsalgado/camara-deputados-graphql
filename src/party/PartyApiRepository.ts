@@ -1,3 +1,4 @@
+import { Injectable } from '@nestjs/common'
 import { collectFirst } from '../congressapi/utils/collectFirst'
 import { CongressApi } from '../congressapi/CongressApi'
 import { Party } from '../congressapi/models/party'
@@ -7,6 +8,7 @@ import { Optional } from '../utils/Optional'
 import { SearchPartiesArgs } from './query/parties'
 import { PartyRepository } from './PartyRepository'
 
+@Injectable()
 export class PartyApiRepository implements PartyRepository {
   constructor(private readonly api: CongressApi) {}
 

@@ -69,7 +69,7 @@ export class GraphQLServer {
       schema: schemas,
       resolvers: features.Resolvers,
       loaders: features.Loaders
-    })
+    } as any)
 
     return this.fastify
   }

@@ -1,7 +1,15 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import { Accept, ContentType, GET, MediaTypes, Param, Query, theTypes } from 'drizzle-http'
-import { Map } from './translation/Map'
+import { Accept } from '@drizzle-http/core'
+import { Query } from '@drizzle-http/core'
+import { GET } from '@drizzle-http/core'
+import { Param } from '@drizzle-http/core'
+import { MediaTypes } from '@drizzle-http/core'
+import { noop } from '@drizzle-http/core'
+import { Timeout } from '@drizzle-http/core'
+import { Map } from '@drizzle-http/response-mapper-adapter'
+import { CircuitBreaker } from '@drizzle-http/opossum-circuit-breaker'
+import { Injectable } from '@nestjs/common'
 import { toDeputySimple } from './models/deputyMappers'
 import { toDeputy } from './models/deputyMappers'
 import { toSimpleParty } from './models/partyMappers'
@@ -15,15 +23,13 @@ import { Deputy } from './models/deputy'
 import { DeputySimple } from './models/deputy'
 import { mapSingle } from './models/base/mapSingle'
 
-@ContentType(MediaTypes.APPLICATION_JSON_UTF8)
-@Accept(MediaTypes.APPLICATION_JSON_UTF8)
+@Injectable()
+@Accept(MediaTypes.APPLICATION_JSON)
+@Timeout(10e30)
 export class CongressApi {
-  // ..
-
-  // region Deputies
-
   @GET('/deputados')
   @Map(mapList(toDeputySimple))
+  @CircuitBreaker()
   deputies(
     @Query('id') id: string,
     @Query('nome') nome: string,
@@ -38,21 +44,19 @@ export class CongressApi {
     @Query('ordem') ordem: Order,
     @Query('ordenarPor') ordenarPor: string
   ): Promise<ApiResult<DeputySimple[]>> {
-    return theTypes(Promise)
+    return noop()
   }
 
   @GET('/deputados/{id}')
   @Map(mapSingle(toDeputy))
+  @CircuitBreaker()
   deputyById(@Param('id') id: number): Promise<ApiResult<Deputy>> {
-    return theTypes(Promise)
+    return noop()
   }
-
-  // endregion
-
-  // region Parties
 
   @GET('/partidos')
   @Map(mapList(toSimpleParty))
+  @CircuitBreaker()
   parties(
     @Query('sigla') sigla: string,
     @Query('dataInicio') dataInicio: string | null = null,
@@ -63,20 +67,20 @@ export class CongressApi {
     @Query('ordem') ordem: Order = Order.ASC,
     @Query('ordenarPor') ordenarPor: string = 'nome'
   ): Promise<ApiResult<PartySimple[]>> {
-    return theTypes(Promise)
+    return noop()
   }
 
   @GET('/partidos/{id}')
   @Map(mapSingle(toParty))
+  @CircuitBreaker()
   partyById(@Param('id') id: number): Promise<ApiResult<Party>> {
-    return theTypes(Promise)
+    return noop()
   }
 
   @GET('/partidos/{id}/membros')
   @Map(mapSingle(toDeputySimple))
+  @CircuitBreaker()
   partyMembers(@Param('id') id: number): Promise<ApiResult<DeputySimple>> {
-    return theTypes(Promise)
+    return noop()
   }
-
-  // endregion
 }
