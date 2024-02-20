@@ -59,12 +59,3 @@ jobs:
           heroku container:login
           heroku container:push -a $HEROKU_APP web
           heroku container:release -a $HEROKU_APP web
-
-  automerge:
-    needs:
-      - test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: fastify/github-action-merge-dependabot@v2.7.1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
